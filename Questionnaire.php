@@ -3,7 +3,7 @@
 
 require('mb.php');
 
-$r1Err = $comboErr = $r3Err = $r4Err = $cErr = $r5Err = $r6Err = $r7Err = $r8Err = $r9Err = $r10Err = $r11Err = $r12Err = "";
+$r1Err = $comboErr = $r3Err = $r4Err = $cErr = $r6Err = $r7Err = $r8Err = $r9Err = $r10Err = $r11Err = $r12Err = "";
      $r1 = $combo = $r3 = $r4 = $c = $r6 = $r7 = $r8 = $r9 = $r10 = $r11 = $r12 = "";
 
      if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -43,7 +43,7 @@ $r1Err = $comboErr = $r3Err = $r4Err = $cErr = $r5Err = $r6Err = $r7Err = $r8Err
 	  if ($_SERVER["REQUEST_METHOD"] == "POST") {
      if (empty($_POST["radio4"])) {
 
-     $r4nErr = "Commission is required";
+     $r4Err = "Commission is required";
      } else {
 
      $r4 = test_input($_POST["radio4"]);
@@ -95,70 +95,63 @@ $r1Err = $comboErr = $r3Err = $r4Err = $cErr = $r5Err = $r6Err = $r7Err = $r8Err
 
            }
          }
-           if ($_SERVER["REQUEST_METHOD"] == "POST") {
-              if (empty($_POST["radio9"])) {
+     if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if (empty($_POST["radio9"])) {
 
-              $r9Err = "Radio Buttons is required";
-              } else {
+          $r9Err = "Radio Buttons is required";
+          } else {
          	     // $rdErr = "";
-              $r9 = test_input($_POST["radio9"]);
+          $r9 = test_input($_POST["radio9"]);
               // check if name only contains letters and whitespace
 
-              }
-            }
-              if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                 if (empty($_POST["radio10"])) {
+        }
+      }
+          if ($_SERVER["REQUEST_METHOD"] == "POST") {
+           if (empty($_POST["radio10"])) {
 
-                 $r10Err = "Radio Buttons is required";
-                 } else {
+           $r10Err = "Radio Buttons is required";
+             } else {
             	     // $rdErr = "";
-                 $r10 = test_input($_POST["radio10"]);
+           $r10 = test_input($_POST["radio10"]);
                  // check if name only contains letters and whitespace
 
-                 }
-               }
-                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                    if (empty($_POST["radio11"])) {
+             }
+           }
+       if ($_SERVER["REQUEST_METHOD"] == "POST") {
+              if (empty($_POST["radio11"])) {
 
-                    $r10Err = "Radio Buttons is required";
-                    } else {
+              $r11Err = "Radio Buttons is required";
+               } else {
                	     // $rdErr = "";
-                    $r10 = test_input($_POST["radio11"]);
+              $r11 = test_input($_POST["radio11"]);
                     // check if name only contains letters and whitespace
 
-                    }
-                  }
-                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                       if (empty($_POST["radio12"])) {
+              }
+          }
+              if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                   if (empty($_POST["radio12"])) {
 
-                       $r11Err = "Radio Buttons is required";
-                       } else {
+                   $r12Err = "Radio Buttons is required";
+                   } else {
                   	     // $rdErr = "";
-                       $r11 = test_input($_POST["radio12"]);
+                   $r12 = test_input($_POST["radio12"]);
                        // check if name only contains letters and whitespace
+               }
 
-                       }
-                     }
 
 
 	 if(!empty($_POST["radio1"])&& !empty($_POST["combobox"])&& !empty($_POST["radio3"])&& !empty($_POST["radio4"])&& !empty($_POST["check"])&& !empty($_POST["radio6"])&& !empty($_POST["radio7"])
-   && !empty($_POST["req"])&& !empty($_POST["radio9"])&& !empty($_POST["radio10"])&& !empty($_POST["radio11"])&& !empty($_POST["radio12"])) {
+   && !empty($_POST["radio8"])&& !empty($_POST["radio9"])&& !empty($_POST["radio10"])&& !empty($_POST["radio11"])&& !empty($_POST["radio12"])) {
 
-	   header("location: Questionnaire2.php?radio1=".$r1."&combobox=".$combo. "&radio3=".$r3. "&radio4=".$r4. "&check=".$c. "&radio6=".$r6."&radio7=".$r7."&radio8=".$r8."&radio9=".$r9."&radio10=".$r10."&radio11=".$r11."&radio12=".$r12);
+	   header("location: Questionnaire2.php?radio1=".$r1."&combobox=".$combo. "&radio3=".$r3. "&radio4=".$r4. "&check=".$c. "&radio6=".$r6."&radio7=".$r7.
+     "&radio8=".$r8."&radio9=".$r9."&radio10=".$r10."&radio11=".$r11."&radio12=".$r12);
 
 
 
     }
+}
 
-
-    function test_input($data) {
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-    }
-
-
+    
 	  $connection->close();
 
 ?>
@@ -434,24 +427,25 @@ form {border: 7px solid #003366; background-color:#80bfff;  width: 50%; padding:
 
 <body>
 
-<h2><center>Questionnaire</center></h2> <br> <br>
-  <form action="Questionnaire2.php" method="POST">
+
+  <form action="Questionnaire2.php" method="POST" >
+    <h2><center>Questionnaire</center></h2> <br> <br>
     <label for="Q1">1.	What is your age?</label></br>
     <div class="form-check-inline">
       <label class="customradio"><span class="radiotextsty" style="margin-left:30px">Below 20</span>
-        <input type="radio"  name="radio1" value="a1" >
+        <input type="radio"  name="radio1" id="radio1" value="1" >
         <span class="checkmark" style="margin-left:30px"></span>
       </label>        
       <label class="customradio"> <span class="radiotextsty">Between 21-35</span>
-    <input type="radio" name="radio1" value="a2">
+    <input type="radio" name="radio1" value="2">
     <span class="checkmark" ></span>
     </label>
     <label class="customradio" style="margin-left:30px"> <span class="radiotextsty">Between 36-50</span>
-    <input type="radio" name="radio1" value="a3">
+    <input type="radio" name="radio1" value="3">
     <span class="checkmark"></span>
     </label>
     <label class="customradio" style="margin-left:30px"> <span class="radiotextsty">above 50</span>
-    <input type="radio" name="radio1" value="a4">
+    <input type="radio" name="radio1" value="4">
     <span class="checkmark"></span>
   </label><span class="error"> <?php echo $r1Err;?></span>
     </div><br><br>
@@ -462,13 +456,13 @@ form {border: 7px solid #003366; background-color:#80bfff;  width: 50%; padding:
   		<div class="ui-widget">
               <select name="combobox" id="combobox" >
                   <option value="0"> Select Town:</option>
-                  <option value="a1"> Colombo</option>
-                  <option value="a2"> Kollupitiya</option>
-                  <option value="a3"> Bambalapitiya</option>
-                  <option value="a4"> Wallawatte</option>
-                  <option value="a5"> Dehiwala</option>
-                  <option value="a6"> Mt.Lavinia</option>
-                  <option value="a7">Rathmalana</option>
+                  <option value="1"> Colombo</option>
+                  <option value="2"> Kollupitiya</option>
+                  <option value="3"> Bambalapitiya</option>
+                  <option value="4"> Wallawatte</option>
+                  <option value="5"> Dehiwala</option>
+                  <option value="6"> Mt.Lavinia</option>
+                  <option value="7">Rathmalana</option>
 
             </select><span class="error"> <?php echo $comboErr;?></span>
           </div>
@@ -479,30 +473,30 @@ form {border: 7px solid #003366; background-color:#80bfff;  width: 50%; padding:
 <br>
 <div class="form-check-inline">
   <label class="customradio"><span class="radiotextsty" style="margin-left:30px">Sinhala</span>
-    <input type="radio"  name="radio3" value="a1" >
+    <input type="radio"  name="radio3" id="radio3" value="1" >
     <span class="checkmark" style="margin-left:30px"></span>
   </label>        
   <label class="customradio"> <span class="radiotextsty">Tamil</span>
-<input type="radio" name="radio3" value="a2">
+<input type="radio" name="radio3" value="2">
 <span class="checkmark" ></span>
 </label>
 <label class="customradio" style="margin-left:30px"> <span class="radiotextsty">Muslim</span>
-<input type="radio" name="radio3" value="a3">
+<input type="radio" name="radio3" value="3">
 <span class="checkmark"></span>
 </label>
 <label class="customradio" style="margin-left:30px"> <span class="radiotextsty">Other</span>
-<input type="radio" name="radio3" value="a4" >
+<input type="radio" name="radio3" value="4" >
 <span class="checkmark"></span>
 </label><span class="error"> <?php echo $r3Err;?></span>
 </div><br><br>
 <label for="Q4">4. Are you vegetarian of non-vegetarian?</label> <br>
 <div class="form-check-inline">
 <label class="customradio"><span class="radiotextsty" style="margin-left:30px">Vegetarian</span>
-  <input type="radio"  name="radio4" value="a1" >
+  <input type="radio"  name="radio4" value="1" >
   <span class="checkmark" style="margin-left:30px"></span>
 </label>        
 <label class="customradio"><span class="radiotextsty">Non-Vegetarian</span>
-  <input type="radio" name="radio4" value="a2">
+  <input type="radio" name="radio4" value="2">
   <span class="checkmark"></span>
 </label><span class="error"> <?php echo $r4Err;?></span>
 </div>
@@ -511,23 +505,23 @@ form {border: 7px solid #003366; background-color:#80bfff;  width: 50%; padding:
 <label for="Q5">5. Which country's food do you like?</label> <br>
 <div class="form-check-inline">
 <label class="check">Sri Lankan
-    <input type="checkbox" name="check" value="a1">
+    <input type="checkbox" name="check" id="check" value="1">
   <span class="checkmark1"></span>
 </label>
 <label class="check">Indian
-    <input type="checkbox"  name="check" value="a2">
+    <input type="checkbox"  name="check" value="2">
   <span class="checkmark1"></span>
 </label>
 <label class="check">Thai
-    <input type="checkbox"  name="check" value="a3">
+    <input type="checkbox"  name="check" value="3">
   <span class="checkmark1"></span>
 </label>
 <label class="check">Chineese
-    <input type="checkbox"  name="check" value="a4">
+    <input type="checkbox"  name="check" value="4">
   <span class="checkmark1"></span>
 </label>
 <label class="check">Mexican
-    <input type="checkbox"  name="Check5" value="a5">
+    <input type="checkbox"  name="Check5" value="5">
   <span class="checkmark1"></span>
 </label><span class="error"> <?php echo $cErr;?></span>
 </div>
@@ -537,20 +531,20 @@ form {border: 7px solid #003366; background-color:#80bfff;  width: 50%; padding:
 <br>
 <div class="form-check-inline">
   <label class="customradio"><span class="radiotextsty" style="margin-left:30px">Less than 1000</span>
-    <input type="radio"  name="radio6" value="a1" >
+    <input type="radio"  name="radio6" id="radio6" value="1" >
     <span class="checkmark" style="margin-left:30px"></span>
   </label>  
   </div>      
   <label class="customradio"style="margin-left:30px; margin-top:10px"> <span class="radiotextsty">Between 1000-5000</span>
-<input type="radio" name="radio6" value="a2">
+<input type="radio" name="radio6" value="2">
 <span class="checkmark"></span>
 </label>
 <label class="customradio" style="margin-left:30px; margin-top:10px"> <span class="radiotextsty">Between 5000-10000</span>
-<input type="radio" name="radio6" value="a3">
+<input type="radio" name="radio6" value="3">
 <span class="checkmark"></span>
 </label>
 <label class="customradio" style="margin-left:30px; margin-top:10px"> <span class="radiotextsty">More than 10000</span>
-<input type="radio" name="radio6" value="a4">
+<input type="radio" name="radio6" value="4">
 <span class="checkmark"></span>
 </label><span class="error"> <?php echo $r6Err;?></span>
 
@@ -559,11 +553,11 @@ form {border: 7px solid #003366; background-color:#80bfff;  width: 50%; padding:
 <br>
 <div class="form-check-inline">
 <label class="customradio"><span class="radiotextsty" style="margin-left:30px">Dine in</span>
-  <input type="radio"  name="radio7" value="a1" >
+  <input type="radio"  name="radio7" id="radio7" value="1" >
   <span class="checkmark" style="margin-left:30px"></span>
 </label>        
 <label class="customradio"><span class="radiotextsty">Take away</span>
-  <input type="radio" name="radio7" value="a2">
+  <input type="radio" name="radio7" value="2">
   <span class="checkmark"></span>
 </label><span class="error"> <?php echo $r7Err;?></span>
 </div>
@@ -572,19 +566,19 @@ form {border: 7px solid #003366; background-color:#80bfff;  width: 50%; padding:
 <br>
 <div class="form-check-inline">
   <label class="customradio"><span class="radiotextsty" style="margin-left:30px">1-5</span>
-    <input type="radio"  name="radio8" value="a1">
+    <input type="radio"  name="radio8" id="radio8" value="1">
     <span class="checkmark" style="margin-left:30px"></span>
   </label>        
   <label class="customradio"> <span class="radiotextsty">5-10</span>
-<input type="radio" name="radio8" value="a2">
+<input type="radio" name="radio8" value="2">
 <span class="checkmark" ></span>
 </label>
 <label class="customradio" style="margin-left:30px"> <span class="radiotextsty">10-20</span>
-<input type="radio" name="radio8" value="a3">
+<input type="radio" name="radio8" value="3">
 <span class="checkmark"></span>
 </label>
 <label class="customradio" style="margin-left:30px"> <span class="radiotextsty">20+</span>
-<input type="radio" name="radio8" value="a4">
+<input type="radio" name="radio8" value="4">
 <span class="checkmark"></span>
 </label><span class="error"> <?php echo $r8Err;?></span>
 </div>
@@ -593,20 +587,20 @@ form {border: 7px solid #003366; background-color:#80bfff;  width: 50%; padding:
 <br>
 <div class="form-check-inline">
 <label class="customradio" style="margin-left:30px; margin-top:10px"> <span class="radiotextsty" >Individually</span>
-<input type="radio" name="radio9" value="a1">
+<input type="radio" name="radio9" id="radio9" value="1">
 <span class="checkmark"></span>
 </label>    
 </div>
   <label class="customradio" style="margin-left:30px; margin-top:10px"> <span class="radiotextsty" >Group of 2 to 3 members</span>
-<input type="radio" name="radio9" value="a2">
+<input type="radio" name="radio9" value="2">
 <span class="checkmark"></span>
 </label>
 <label class="customradio" style="margin-left:30px; margin-top:10px"> <span class="radiotextsty">Gruop of 4 to 5 members</span>
-<input type="radio" name="radio9" value="a3">
+<input type="radio" name="radio9" value="3">
 <span class="checkmark"></span>
 </label>
 <label class="customradio" style="margin-left:30px; margin-top:10px"> <span class="radiotextsty">Group of more than 5 memebers</span>
-<input type="radio" name="radio9" value="a4">
+<input type="radio" name="radio9" value="4">
 <span class="checkmark"></span>
 </label><span class="error"> <?php echo $r9Err;?></span>
 <br>
@@ -614,11 +608,11 @@ form {border: 7px solid #003366; background-color:#80bfff;  width: 50%; padding:
 <br>
 <div class="form-check-inline">
 <label class="customradio"><span class="radiotextsty" style="margin-left:30px">Yes</span>
-  <input type="radio"  name="radio10" value="a1" >
+  <input type="radio"  name="radio10" id="radio10" value="1" >
   <span class="checkmark" style="margin-left:30px"></span>
 </label>        
 <label class="customradio"><span class="radiotextsty">No</span>
-  <input type="radio" name="radio10" value="a2">
+  <input type="radio" name="radio10" value="2">
   <span class="checkmark"></span>
 </label><span class="error"> <?php echo $r10Err;?></span>
 </div>
@@ -626,19 +620,19 @@ form {border: 7px solid #003366; background-color:#80bfff;  width: 50%; padding:
 <label for="Q11">11. What time you choose the time for your meal? Breakfast, Lunch, Tea time or Dinner?</label><br>
 <div class="form-check-inline">
   <label class="customradio"><span class="radiotextsty" style="margin-left:30px">Breakfast</span>
-    <input type="radio"  name="radio11" value="a1" >
+    <input type="radio"  name="radio11" id="radio11" value="1" >
     <span class="checkmark" style="margin-left:30px"></span>
   </label>        
   <label class="customradio"> <span class="radiotextsty">Lunch</span>
-<input type="radio" name="radio11" value="a2">
+<input type="radio" name="radio11" value="2">
 <span class="checkmark" ></span>
 </label>
 <label class="customradio" style="margin-left:30px"> <span class="radiotextsty">Tea time</span>
-<input type="radio" name="radio11" value="a3">
+<input type="radio" name="radio11" value="3">
 <span class="checkmark"></span>
 </label>
 <label class="customradio" style="margin-left:30px"> <span class="radiotextsty">Dinner</span>
-<input type="radio" name="radio11" value="a4">
+<input type="radio" name="radio11" value="4">
 <span class="checkmark"></span>
 </label><span class="error"> <?php echo $r11Err;?></span>
 </div>
@@ -647,11 +641,11 @@ form {border: 7px solid #003366; background-color:#80bfff;  width: 50%; padding:
 <div class="form-check-inline">
 
 <label class="customradio"><span class="radiotextsty" style="margin-left:30px">Card Payments</span>
-  <input type="radio" name="radio12" value="a1">
+  <input type="radio" name="radio12" id="radio12" value="1">
   <span class="checkmark" style="margin-left:30px"></span>
 </label>        
 <label class="customradio"><span class="radiotextsty">Cash Payments</span>
-  <input type="radio" name="radio12" value="a2">
+  <input type="radio" name="radio12" value="2">
   <span class="checkmark"></span>
 </label><span class="error"> <?php echo $r12Err;?></span>
 </div>
