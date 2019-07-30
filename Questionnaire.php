@@ -505,23 +505,23 @@ form {border: 7px solid #003366; background-color:#80bfff;  width: 50%; padding:
 <label for="Q5">5. Which country's food do you like?</label> <br>
 <div class="form-check-inline">
 <label class="check">Sri Lankan
-    <input type="checkbox" name="check" id="check" value="1">
+    <input type="checkbox" name="check[]" id="check" value="1">
   <span class="checkmark1"></span>
 </label>
 <label class="check">Indian
-    <input type="checkbox"  name="check" value="2">
+    <input type="checkbox"  name="check[]" value="2">
   <span class="checkmark1"></span>
 </label>
 <label class="check">Thai
-    <input type="checkbox"  name="check" value="3">
+    <input type="checkbox"  name="check[]" value="3">
   <span class="checkmark1"></span>
 </label>
 <label class="check">Chineese
-    <input type="checkbox"  name="check" value="4">
+    <input type="checkbox"  name="check[]" value="4">
   <span class="checkmark1"></span>
 </label>
 <label class="check">Mexican
-    <input type="checkbox"  name="Check5" value="5">
+    <input type="checkbox"  name="check[]" value="5">
   <span class="checkmark1"></span>
 </label><span class="error"> <?php echo $cErr;?></span>
 </div>
