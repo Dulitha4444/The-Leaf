@@ -1,4 +1,6 @@
 
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,8 +23,8 @@
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <style>
-body {font-family: Arial, Helvetica, sans-serif; background-image: url("Food 2.jpg"); background-size: 1350px 1320px; background-repeat:repeat;}
-form {border: 7px solid transparent; background-color:transparent;  width: 50%; padding: 12px 20px; margin-left: 20px;}
+body {font-family: Arial, Helvetica, sans-serif; background-image: url("Food 1.jpg"); background-size: 1350px 660px; background-repeat: no-repeat;}
+form {border: 7px solid #003366; background-color:#80bfff;  width: 50%; padding: 12px 20px; margin-left: 300px;}
 
 
 .container1 {
@@ -266,7 +268,6 @@ form {border: 7px solid transparent; background-color:transparent;  width: 50%; 
   .error {color: #FF0000;}
 
 </style>
-
 </head>
 
 <body>
@@ -276,20 +277,21 @@ form {border: 7px solid transparent; background-color:transparent;  width: 50%; 
     <h2><center>Questionnaire</center></h2> <br> <br>
     <label for="Q1">1.	What is your age?</label></br>
     <div class="form-check-inline">
-      <label class="customradio"><span class="radiotextsty" style="margin-left:30px" >Below 20</span>
-        <input type="radio"  name="radio1" id="radio1" value="1">
+      <label class="customradio"><span class="radiotextsty" style="margin-left:30px">Below 20</span>
+        <input type="radio"  name="radio1" value="a1" id="radio1" >
         <span class="checkmark" style="margin-left:30px"></span>
       </label>        
+      
       <label class="customradio"> <span class="radiotextsty">Between 21-35</span>
-    <input type="radio" name="radio1" value="2">
-    <span class="checkmark" ></span>
-    </label>
-    <label class="customradio" style="margin-left:30px"> <span class="radiotextsty">Between 36-50</span>
-    <input type="radio" name="radio1" value="3">
-    <span class="checkmark"></span>
-    </label>
+         <input type="radio" name="radio1" value="a2">
+         <span class="checkmark" ></span>
+       </label>
+      <label class="customradio" style="margin-left:30px"> <span class="radiotextsty">Between 36-50</span>
+         <input type="radio" name="radio1" value="a3">
+         <span class="checkmark"></span>
+      </label>
     <label class="customradio" style="margin-left:30px"> <span class="radiotextsty">above 50</span>
-    <input type="radio" name="radio1" value="4">
+    <input type="radio" name="radio1" value="a4">
     <span class="checkmark"></span>
   </label>
     </div><br><br>
@@ -300,13 +302,13 @@ form {border: 7px solid transparent; background-color:transparent;  width: 50%; 
   		<div class="ui-widget">
               <select name="combobox" id="combobox" >
                   <option value="0"> Select Town:</option>
-                  <option value="1"> Colombo</option>
-                  <option value="2"> Kollupitiya</option>
-                  <option value="3"> Bambalapitiya</option>
-                  <option value="4"> Wallawatte</option>
-                  <option value="5"> Dehiwala</option>
-                  <option value="6"> Mt.Lavinia</option>
-                  <option value="7">Rathmalana</option>
+                  <option value="a1"> Colombo</option>
+                  <option value="a2"> Kollupitiya</option>
+                  <option value="a3"> Bambalapitiya</option>
+                  <option value="a4"> Wallawatte</option>
+                  <option value="a5"> Dehiwala</option>
+                  <option value="a6"> Mt.Lavinia</option>
+                  <option value="a7">Rathmalana</option>
 
             </select>
           </div>
@@ -317,30 +319,30 @@ form {border: 7px solid transparent; background-color:transparent;  width: 50%; 
 <br>
 <div class="form-check-inline">
   <label class="customradio"><span class="radiotextsty" style="margin-left:30px">Sinhala</span>
-    <input type="radio"  name="radio3" id="radio3" value="1" >
+    <input type="radio"  name="radio3" value="a1"  id="radio3">
     <span class="checkmark" style="margin-left:30px"></span>
   </label>        
   <label class="customradio"> <span class="radiotextsty">Tamil</span>
-<input type="radio" name="radio3" value="2">
+<input type="radio" name="radio3" value="a2">
 <span class="checkmark" ></span>
 </label>
 <label class="customradio" style="margin-left:30px"> <span class="radiotextsty">Muslim</span>
-<input type="radio" name="radio3" value="3">
+<input type="radio" name="radio3" value="a3">
 <span class="checkmark"></span>
 </label>
 <label class="customradio" style="margin-left:30px"> <span class="radiotextsty">Other</span>
-<input type="radio" name="radio3" value="4" >
+<input type="radio" name="radio3" value="a4" >
 <span class="checkmark"></span>
 </label>
 </div><br><br>
-<label for="Q4">4. Are you vegetarian or non-vegetarian?</label> <br>
+<label for="Q4">4. Are you vegetarian of non-vegetarian?</label> <br>
 <div class="form-check-inline">
 <label class="customradio"><span class="radiotextsty" style="margin-left:30px">Vegetarian</span>
-  <input type="radio" id="radio4"  name="radio4" value="1" >
+  <input type="radio"  name="radio4" value="a1" id="radio4">
   <span class="checkmark" style="margin-left:30px"></span>
 </label>        
 <label class="customradio"><span class="radiotextsty">Non-Vegetarian</span>
-  <input type="radio" name="radio4" value="2">
+  <input type="radio" name="radio4" value="a2">
   <span class="checkmark"></span>
 </label>
 </div>
@@ -349,23 +351,23 @@ form {border: 7px solid transparent; background-color:transparent;  width: 50%; 
 <label for="Q5">5. Which country's food do you like?</label> <br>
 <div class="form-check-inline">
 <label class="check">Sri Lankan
-    <input type="checkbox" name="check[]" id="check" value="1">
+    <input type="checkbox" name="check" value="a1" id="radio5">
   <span class="checkmark1"></span>
 </label>
 <label class="check">Indian
-    <input type="checkbox"  name="check[]" value="2">
+    <input type="checkbox"  name="check" value="a2">
   <span class="checkmark1"></span>
 </label>
 <label class="check">Thai
-    <input type="checkbox"  name="check[]" value="3">
+    <input type="checkbox"  name="check" value="a3">
   <span class="checkmark1"></span>
 </label>
 <label class="check">Chineese
-    <input type="checkbox"  name="check[]" value="4">
+    <input type="checkbox"  name="check" value="a4">
   <span class="checkmark1"></span>
 </label>
 <label class="check">Mexican
-    <input type="checkbox"  name="check[]" value="5">
+    <input type="checkbox"  name="Check5" value="a5">
   <span class="checkmark1"></span>
 </label>
 </div>
@@ -375,20 +377,20 @@ form {border: 7px solid transparent; background-color:transparent;  width: 50%; 
 <br>
 <div class="form-check-inline">
   <label class="customradio"><span class="radiotextsty" style="margin-left:30px">Less than 1000</span>
-    <input type="radio"  name="radio6" id="radio6" value="1" >
+    <input type="radio"  name="radio6" value="a1" id="radio6" >
     <span class="checkmark" style="margin-left:30px"></span>
   </label>  
   </div>      
   <label class="customradio"style="margin-left:30px; margin-top:10px"> <span class="radiotextsty">Between 1000-5000</span>
-<input type="radio" name="radio6" value="2">
+<input type="radio" name="radio6" value="a2">
 <span class="checkmark"></span>
 </label>
 <label class="customradio" style="margin-left:30px; margin-top:10px"> <span class="radiotextsty">Between 5000-10000</span>
-<input type="radio" name="radio6" value="3">
+<input type="radio" name="radio6" value="a3">
 <span class="checkmark"></span>
 </label>
 <label class="customradio" style="margin-left:30px; margin-top:10px"> <span class="radiotextsty">More than 10000</span>
-<input type="radio" name="radio6" value="4">
+<input type="radio" name="radio6" value="a4">
 <span class="checkmark"></span>
 </label>
 
@@ -397,11 +399,11 @@ form {border: 7px solid transparent; background-color:transparent;  width: 50%; 
 <br>
 <div class="form-check-inline">
 <label class="customradio"><span class="radiotextsty" style="margin-left:30px">Dine in</span>
-  <input type="radio"  name="radio7" id="radio7" value="1" >
+  <input type="radio"  name="radio7" value="a1" id="radio7">
   <span class="checkmark" style="margin-left:30px"></span>
 </label>        
 <label class="customradio"><span class="radiotextsty">Take away</span>
-  <input type="radio" name="radio7" value="2">
+  <input type="radio" name="radio7" value="a2">
   <span class="checkmark"></span>
 </label>
 </div>
@@ -410,19 +412,19 @@ form {border: 7px solid transparent; background-color:transparent;  width: 50%; 
 <br>
 <div class="form-check-inline">
   <label class="customradio"><span class="radiotextsty" style="margin-left:30px">1-5</span>
-    <input type="radio"  name="radio8" id="radio8" value="1">
+    <input type="radio"  name="radio8" value="a1" id="radio8">
     <span class="checkmark" style="margin-left:30px"></span>
   </label>        
   <label class="customradio"> <span class="radiotextsty">5-10</span>
-<input type="radio" name="radio8" value="2">
+<input type="radio" name="radio8" value="a2">
 <span class="checkmark" ></span>
 </label>
 <label class="customradio" style="margin-left:30px"> <span class="radiotextsty">10-20</span>
-<input type="radio" name="radio8" value="3">
+<input type="radio" name="radio8" value="a3">
 <span class="checkmark"></span>
 </label>
 <label class="customradio" style="margin-left:30px"> <span class="radiotextsty">20+</span>
-<input type="radio" name="radio8" value="4">
+<input type="radio" name="radio8" value="a4">
 <span class="checkmark"></span>
 </label>
 </div>
@@ -431,20 +433,20 @@ form {border: 7px solid transparent; background-color:transparent;  width: 50%; 
 <br>
 <div class="form-check-inline">
 <label class="customradio" style="margin-left:30px; margin-top:10px"> <span class="radiotextsty" >Individually</span>
-<input type="radio" name="radio9" id="radio9" value="1">
+<input type="radio" name="radio9" value="a1" id="radio9">
 <span class="checkmark"></span>
 </label>    
 </div>
   <label class="customradio" style="margin-left:30px; margin-top:10px"> <span class="radiotextsty" >Group of 2 to 3 members</span>
-<input type="radio" name="radio9" value="2">
+<input type="radio" name="radio9" value="a2">
 <span class="checkmark"></span>
 </label>
 <label class="customradio" style="margin-left:30px; margin-top:10px"> <span class="radiotextsty">Gruop of 4 to 5 members</span>
-<input type="radio" name="radio9" value="3">
+<input type="radio" name="radio9" value="a3">
 <span class="checkmark"></span>
 </label>
 <label class="customradio" style="margin-left:30px; margin-top:10px"> <span class="radiotextsty">Group of more than 5 memebers</span>
-<input type="radio" name="radio9" value="4">
+<input type="radio" name="radio9" value="a4">
 <span class="checkmark"></span>
 </label>
 <br>
@@ -452,11 +454,11 @@ form {border: 7px solid transparent; background-color:transparent;  width: 50%; 
 <br>
 <div class="form-check-inline">
 <label class="customradio"><span class="radiotextsty" style="margin-left:30px">Yes</span>
-  <input type="radio"  name="radio10" id="radio10" value="1" >
+  <input type="radio"  name="radio10" value="a1" id="radio10">
   <span class="checkmark" style="margin-left:30px"></span>
 </label>        
 <label class="customradio"><span class="radiotextsty">No</span>
-  <input type="radio" name="radio10" value="2">
+  <input type="radio" name="radio10" value="a2">
   <span class="checkmark"></span>
 </label>
 </div>
@@ -464,19 +466,19 @@ form {border: 7px solid transparent; background-color:transparent;  width: 50%; 
 <label for="Q11">11. What time you choose the time for your meal? Breakfast, Lunch, Tea time or Dinner?</label><br>
 <div class="form-check-inline">
   <label class="customradio"><span class="radiotextsty" style="margin-left:30px">Breakfast</span>
-    <input type="radio"  name="radio11" id="radio11" value="1" >
+    <input type="radio"  name="radio11" value="a1" id="radio11">
     <span class="checkmark" style="margin-left:30px"></span>
   </label>        
   <label class="customradio"> <span class="radiotextsty">Lunch</span>
-<input type="radio" name="radio11" value="2">
+<input type="radio" name="radio11" value="a2">
 <span class="checkmark" ></span>
 </label>
 <label class="customradio" style="margin-left:30px"> <span class="radiotextsty">Tea time</span>
-<input type="radio" name="radio11" value="3">
+<input type="radio" name="radio11" value="a3">
 <span class="checkmark"></span>
 </label>
 <label class="customradio" style="margin-left:30px"> <span class="radiotextsty">Dinner</span>
-<input type="radio" name="radio11" value="4">
+<input type="radio" name="radio11" value="a4">
 <span class="checkmark"></span>
 </label>
 </div>
@@ -485,17 +487,16 @@ form {border: 7px solid transparent; background-color:transparent;  width: 50%; 
 <div class="form-check-inline">
 
 <label class="customradio"><span class="radiotextsty" style="margin-left:30px">Card Payments</span>
-  <input type="radio" name="radio12" id="radio12" value="1">
+  <input type="radio" name="radio12" value="a1" id="radio12">
   <span class="checkmark" style="margin-left:30px"></span>
 </label>        
 <label class="customradio"><span class="radiotextsty">Cash Payments</span>
-  <input type="radio" name="radio12" value="2">
+  <input type="radio" name="radio12" value="a2">
   <span class="checkmark"></span>
 </label>
 </div>
 <br><br>
-<center><button  class="btn cust-btn " type="submit" value="save" style="font-size: 20px;letter-spacing: 1px;">Save</button><td>
-<button  class="btn cust-btn " type="reset" value="reset" style="font-size: 20px;letter-spacing: 1px;">Reset</button></center>
+<center><input type="submit" value="Save"></center>
 
 
 
@@ -506,142 +507,3 @@ form {border: 7px solid transparent; background-color:transparent;  width: 50%; 
 
 
 
-<script>
-$( function() {
-    $.widget( "custom.combobox", {
-      _create: function() {
-        this.wrapper = $( "<span>" )
-          .addClass( "custom-combobox" )
-          .insertAfter( this.element );
-
-        this.element.hide();
-        this._createAutocomplete();
-        this._createShowAllButton();
-      },
-
-      _createAutocomplete: function() {
-        var selected = this.element.children( ":selected" ),
-          value = selected.val() ? selected.text() : "";
-
-        this.input = $( "<input>" )
-          .appendTo( this.wrapper )
-          .val( value )
-          .attr( "title", "" )
-          .addClass( "custom-combobox-input ui-widget ui-widget-content ui-state-default ui-corner-left" )
-          .autocomplete({
-            delay: 0,
-            minLength: 0,
-            source: $.proxy( this, "_source" )
-          })
-          .tooltip({
-            classes: {
-              "ui-tooltip": "ui-state-highlight"
-            }
-          });
-
-        this._on( this.input, {
-          autocompleteselect: function( event, ui ) {
-            ui.item.option.selected = true;
-            this._trigger( "select", event, {
-              item: ui.item.option
-            });
-          },
-
-          autocompletechange: "_removeIfInvalid"
-        });
-      },
-
-      _createShowAllButton: function() {
-        var input = this.input,
-          wasOpen = false
-
-        $( "<a>" )
-          .attr( "tabIndex", -1 )
-          .attr( "title", "Show All Items" )
-          .attr( "height", "" )
-          .tooltip()
-          .appendTo( this.wrapper )
-          .button({
-            icons: {
-              primary: "ui-icon-triangle-1-s"
-            },
-            text: "false"
-          })
-          .removeClass( "ui-corner-all" )
-          .addClass( "custom-combobox-toggle ui-corner-right" )
-          .on( "mousedown", function() {
-            wasOpen = input.autocomplete( "widget" ).is( ":visible" );
-          })
-          .on( "click", function() {
-            input.trigger( "focus" );
-
-            // Close if already visible
-            if ( wasOpen ) {
-              return;
-            }
-
-            // Pass empty string as value to search for, displaying all results
-            input.autocomplete( "search", "" );
-          });
-      },
-
-      _source: function( request, response ) {
-        var matcher = new RegExp( $.ui.autocomplete.escapeRegex(request.term), "i" );
-        response( this.element.children( "option" ).map(function() {
-          var text = $( this ).text();
-          if ( this.value && ( !request.term || matcher.test(text) ) )
-            return {
-              label: text,
-              value: text,
-              option: this
-            };
-        }) );
-      },
-
-      _removeIfInvalid: function( event, ui ) {
-
-        // Selected an item, nothing to do
-        if ( ui.item ) {
-          return;
-        }
-
-        // Search for a match (case-insensitive)
-        var value = this.input.val(),
-          valueLowerCase = value.toLowerCase(),
-          valid = false;
-        this.element.children( "option" ).each(function() {
-          if ( $( this ).text().toLowerCase() === valueLowerCase ) {
-            this.selected = valid = true;
-            return false;
-          }
-        });
-
-        // Found a match, nothing to do
-        if ( valid ) {
-          return;
-        }
-
-        // Remove invalid value
-        this.input
-          .val( "" )
-          .attr( "title", value + " didn't match any item" )
-          .tooltip( "open" );
-        this.element.val( "" );
-        this._delay(function() {
-          this.input.tooltip( "close" ).attr( "title", "" );
-        }, 2500 );
-        this.input.autocomplete( "instance" ).term = "";
-      },
-
-      _destroy: function() {
-        this.wrapper.remove();
-        this.element.show();
-      }
-    });
-
-    $( "#combobox" ).combobox();
-    $( "#toggle" ).on( "click", function() {
-      $( "#combobox" ).toggle();
-    });
-  } );
-</script>

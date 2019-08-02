@@ -17,8 +17,9 @@ $Radio10 = $_POST['radio10'];
 $Radio11 = $_POST['radio11'];
 $Radio12 = $_POST['radio12'];
 
+
 $sql = "INSERT INTO questionnaire (answer1, answer2, answer3, answer4, answer5, answer6, answer7, answer8, answer9, answer10, answer11, answer12)
-VALUES ('$Radio1', '$Combobox', '$Radio3','$Radio4', '$Check', '$Radio6', '$Radio7', '$Radio8', '$Radio9', '$Radio10', '$Radio11', '$Radio12')";
+VALUES ('$Radio1', '$Combobox', '$Radio3','$Radio4', '$Check','$Radio6', '$Radio7', '$Radio8', '$Radio9', '$Radio10', '$Radio11', '$Radio12')";
 
 
 

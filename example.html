@@ -1,0 +1,156 @@
+<?php
+
+require('mb.php');
+
+$r1Err = $comboErr = $r3Err = $r4Err = $cErr = $r5Err = $r6Err = $r7Err = $r8Err = $r9Err = $r10Err = $r11Err = $r12Err = "";
+     $r1 = $combo = $r3 = $r4 = $c = $r6 = $r7 = $r8 = $r9 = $r10 = $r11 = $r12 = "";
+
+     if ($_SERVER["REQUEST_METHOD"] == "POST") {
+     if (empty($_POST["radio1"])) {
+
+     $r1Err = "Code is required";
+     } else {
+
+     $r1 = test_input($_POST["radio1"]);
+     // check if name only contains letters and whitespace
+
+     }
+      }
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (empty($_POST["combobox"])) {
+    $comboErr = "Name is required";
+    } else {
+    $combo = test_input($_POST["combobox"]);
+    // check if name only contains letters and whitespace
+
+
+    }
+
+     }
+	 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+     if (empty($_POST["radio3"])) {
+
+     $r3Err = "Mobile Number is required";
+     } else {
+
+     $r3 = test_input($_POST["radio3"]);
+     // check if name only contains letters and whitespace
+
+     }
+      }
+	  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+     if (empty($_POST["radio4"])) {
+
+     $r4nErr = "Commission is required";
+     } else {
+
+     $r4 = test_input($_POST["radio4"]);
+     // check if name only contains letters and whitespace
+
+     }
+    }
+	if ($_SERVER["REQUEST_METHOD"] == "POST") {
+     if (empty($_POST["check"])) {
+
+     $cErr = "Remarks is required";
+     } else {
+
+     $c = test_input($_POST["check"]);
+     // check if name only contains letters and whitespace
+
+     }
+    }
+	if ($_SERVER["REQUEST_METHOD"] == "POST") {
+     if (empty($_POST["radio6"])) {
+
+     $r6Err = "Radio Buttons is required";
+     } else {
+	     // $rdErr = "";
+     $r6 = test_input($_POST["radio6"]);
+     // check if name only contains letters and whitespace
+
+     }
+     if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if (empty($_POST["radio7"])) {
+
+        $r7Err = "Radio Buttons is required";
+        } else {
+   	     // $rdErr = "";
+        $r7 = test_input($_POST["radio7"]);
+        // check if name only contains letters and whitespace
+
+        }
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+           if (empty($_POST["radio8"])) {
+
+           $r8Err = "Radio Buttons is required";
+           } else {
+      	     // $rdErr = "";
+           $r8 = test_input($_POST["radio8"]);
+           // check if name only contains letters and whitespace
+
+           }
+           if ($_SERVER["REQUEST_METHOD"] == "POST") {
+              if (empty($_POST["radio9"])) {
+
+              $r9Err = "Radio Buttons is required";
+              } else {
+         	     // $rdErr = "";
+              $r9 = test_input($_POST["radio9"]);
+              // check if name only contains letters and whitespace
+
+              }
+              if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                 if (empty($_POST["radio10"])) {
+
+                 $r10Err = "Radio Buttons is required";
+                 } else {
+            	     // $rdErr = "";
+                 $r10 = test_input($_POST["radio10"]);
+                 // check if name only contains letters and whitespace
+
+                 }
+                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                    if (empty($_POST["radio11"])) {
+
+                    $r10Err = "Radio Buttons is required";
+                    } else {
+               	     // $rdErr = "";
+                    $r10 = test_input($_POST["radio11"]);
+                    // check if name only contains letters and whitespace
+
+                    }
+                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                       if (empty($_POST["radio12"])) {
+
+                       $r11Err = "Radio Buttons is required";
+                       } else {
+                  	     // $rdErr = "";
+                       $r11 = test_input($_POST["radio12"]);
+                       // check if name only contains letters and whitespace
+
+                       }
+
+
+	 if(!empty($_POST["radio1"])&& !empty($_POST["combobox"])&& !empty($_POST["radio3"])&& !empty($_POST["radio4"])&& !empty($_POST["check"])&& !empty($_POST["radio6"])&& !empty($_POST["radio7"])
+   && !empty($_POST["req"])&& !empty($_POST["radio9"])&& !empty($_POST["radio10"])&& !empty($_POST["radio11"])&& !empty($_POST["radio12"])) {
+
+	   header("location: Questionnaire2.php?radio1=".$r1."&combobox=".$combo. "&radio3=".$r3. "&radio4=".$r4. "&check=".$c. "&radio6=".$r6."&radio7=".$r7."&radio8=".$r8."&radio9=".$r9."&radio10=".$r10."&radio11=".$r11."&radio12=".$r12);
+
+    }
+
+    }
+
+
+    function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+    }
+
+
+	  $connection->close();
+
+?>
