@@ -29,12 +29,62 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
 </head>
+<body>
 <style>
-body {font-family: Arial, Helvetica, sans-serif; background-image: url("images/Food 1.jpg"); padding-left: 840px; background-size: 1000px 1600px; background-repeat:repeat;}
+/* body {font-family: Arial, Helvetica, sans-serif; background-image: url("images/Food 1.jpg"; "images/Food 2.jpg";"images/Food 3.jpg"); padding-left: 840px; background-size: 1000px 1320px; background-repeat:repeat;} */
+
+.split { height: 100%;  position: fixed; z-index: 1; top: 0; overflow-x: hidden;  }
+
+.left { width: 72%;}
+
+.right { right: 0; padding-left: 390px; width: 70%}
 
 </style>
+<div class="split left">
+	<div id="headerSlider" class="carousel slide" data-ride="carousel">
+		<!-- <ol class="carousel-indicators">
+			<li data-target="#headerSlider" data-slide-to="0" class="active"></li>
+			<li data-target="#headerSlider" data-slide-to="1"></li>
+			<li data-target="#headerSlider" data-slide-to="2"></li>
+			<li data-target="#headerSlider" data-slide-to="3"></li>
+			<li data-target="#headerSlider" data-slide-to="4"></li>
+		</ol> -->
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<img src="images/new 1.jpg" class="d-block w-100">
+			</div>
 
-	<div class="limiter">
+			<div class="carousel-item">
+				<img src="images/new 2.jpg" class="d-block w-100">
+			</div>
+
+			<div class="carousel-item">
+				<img src="images/new 3.jpg" class="d-block w-100">
+			</div>
+			<div class="carousel-item">
+				<img src="images/new 4.jpg" class="d-block w-100">
+			</div>
+			<div class="carousel-item">
+				<img src="images/new 5.jpg" class="d-block w-100">
+			</div>
+
+
+		</div>
+
+	<a class="carousel-control-prev" href="#headerSlider" role="button" data-slide="prev">
+		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		<span class="sr-only"></span>
+	</a>
+	<a class="carousel-control-next" href="#headerSlider" role="button" data-slide="next">
+		<span class="carousel-control-next-icon" aria-hidden="true"></span>
+		<span class="sr-only"></span>
+	</a>
+	</div>
+</div>
+
+
+
+	<div class="split right">
 		<div class="container-login100">
 
 

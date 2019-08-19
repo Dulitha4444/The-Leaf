@@ -37,53 +37,62 @@
 </head>
 <body>
 <style>
- body {font-family: Arial, Helvetica, sans-serif; background-image: url("images/Food 1.jpg"); padding-left: 840px; background-size: 1000px 1320px; background-repeat:repeat;}
+/* body {font-family: Arial, Helvetica, sans-serif; background-image: url("images/Food 1.jpg"; "images/Food 2.jpg";"images/Food 3.jpg"); padding-left: 840px; background-size: 1000px 1320px; background-repeat:repeat;} */
+
+.split { height: 100%;  position: fixed; z-index: 1; top: 0; overflow-x: hidden;  }
+
+.left { width: 89%;}
+
+.right { right: 0; padding-left:500px; width: 70%}
 
 </style>
-<!-- <div id="slider" style="padding-right: 500px">
+
+<!-- <div id="slider" style="padding-right: 500px"> -->
+<div class="split left">
 	<div id="headerSlider" class="carousel slide" data-ride="carousel">
-		<ol class="carousel-indicators">
+		<!-- <ol class="carousel-indicators">
 			<li data-target="#headerSlider" data-slide-to="0" class="active"></li>
 			<li data-target="#headerSlider" data-slide-to="1"></li>
 			<li data-target="#headerSlider" data-slide-to="2"></li>
-		</ol>
+			<li data-target="#headerSlider" data-slide-to="3"></li>
+			<li data-target="#headerSlider" data-slide-to="4"></li>
+
+		</ol> -->
 	<div class="carousel-inner">
 		<div class="carousel-item active">
-			<img src="images/food 1.jpg" class="d-block w-100">
-			<div class="carousel-caption">
-
-				<h5> WELCOME </h5>
-
-			</div>
+			<img src="images/new 1.jpg" class="d-block w-100">
 		</div>
 
 		<div class="carousel-item">
-			<img src="images/food 2.jpg" class="d-block w-100">
+			<img src="images/new 2.jpg" class="d-block w-100">
 		</div>
-			<div class="carousel-caption">
-				<h5> WELCOME </h5>
-			</div>
+
 		<div class="carousel-item">
-			<img src="images/food 3.jpg" class="d-block w-100">
+			<img src="images/new 3.jpg" class="d-block w-100">
 		</div>
-			<div class="carousel-caption">
-				<h5> WELCOME </h5>
-			</div>
+		<div class="carousel-item">
+			<img src="images/new 4.jpg" class="d-block w-100">
+		</div>
+		<div class="carousel-item">
+			<img src="images/new 7.jpg" class="d-block w-100">
+		</div>
+
+
 	</div>
 	<a class="carousel-control-prev" href="#headerSlider" role="button" data-slide="prev">
 		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-		<span class="sr-only">Previous</span>
+		<span class="sr-only"></span>
 	</a>
 	<a class="carousel-control-next" href="#headerSlider" role="button" data-slide="next">
 		<span class="carousel-control-next-icon" aria-hidden="true"></span>
-		<span class="sr-only">Next</span>
+		<span class="sr-only"></span>
 	</a>
 	</div>
-</div> -->
+</div>
 
 
-
-	<div class="limiter">
+<!--	<div class="limiter" style="padding-left: 840px;">  -->
+	<div class="split right">
 		<div class="container-login100">
 
 
@@ -109,10 +118,10 @@
 					<span class="label-input100">Gender:</span> <br>
 					<div class="form-check-inline">
 					<label class="label-input100"><span class="radiotextsty" style="margin-left:30px">Male</span>
-						<input type="radio" id="gender"  name="gender" value="Male" checked >
+						<input type="radio" id="gender"  name="gender" value="1" checked >
 						<span class="checkmark" style="margin-left:30px"></span>     
 					<label class="label-input100"><span class="radiotextsty">Female</span></label>
-						<input type="radio" name="gender" value="Female">
+						<input type="radio" name="gender" value="2">
 						<span class="checkmark"></span></label>
 
 					</div>
@@ -131,16 +140,16 @@
 						<span class="label-input100">Nation:</span> <br>
 						<div class="form-check-inline" style="margin-top:10px">
 						<label class="label-input100"><span class="radiotextsty">Sinhala</span>
-						  <input type="radio" name="nation" value="Sinhala" checked>
+						  <input type="radio" name="nation" value="2" checked>
 						  <span class="checkmark"></span></label> 
 					<label class="label-input100" style="margin-left:10px"><span class="radiotextsty">Tamil</span>
-					  <input type="radio" name="nation" value="Tamil" >
+					  <input type="radio" name="nation" value="2" >
 					  <span class="checkmark"></span></label>
 						<label class="label-input100" style="margin-left:10px"><span class="radiotextsty">Muslim</span>
-						  <input type="radio" name="nation" value="Muslim">
+						  <input type="radio" name="nation" value="2">
 						  <span class="checkmark"></span></label>
 						<label class="label-input100" style="margin-left:10px"><span class="radiotextsty">Other</span>
-							 <input type="radio" name="nation" value="Other">
+							 <input type="radio" name="nation" value="2">
 							 <span class="checkmark"></span></label>	<br>
 
 
@@ -201,6 +210,7 @@
 							<i class="fa fa-long-arrow-right m-l-5"></i>
 						</a>
 					</div>
+
 				</form>
 			</div>
 		</div>
@@ -218,6 +228,7 @@
 	if (ErrorText= "") { form.submit() }
 	}
 	</script>
+
 
 <!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
