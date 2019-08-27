@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Aug 10, 2019 at 09:04 AM
+-- Generation Time: Aug 21, 2019 at 03:33 PM
 -- Server version: 5.7.19
 -- PHP Version: 5.6.31
 
@@ -54,7 +54,15 @@ CREATE TABLE IF NOT EXISTS `contact` (
   `reply` varchar(255) NOT NULL,
   `recive_date` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `contact`
+--
+
+INSERT INTO `contact` (`id`, `username`, `phone_number`, `email`, `reply`, `recive_date`) VALUES
+(7, 'Dulitha', 4444, 'Thisum44@gmail.com', 'Hiiiiiiiiiiiiiiiiiiiiiiiiii', '2019-08-10'),
+(6, 'Thisun', 4444, 'Thisum44@gmail.com', 'hi', '2019-08-10');
 
 -- --------------------------------------------------------
 
@@ -68,7 +76,7 @@ CREATE TABLE IF NOT EXISTS `customer_registration` (
   `user_name` varchar(255) NOT NULL,
   `last_name` varchar(255) NOT NULL,
   `gender` varchar(255) NOT NULL,
-  `age` int(255) NOT NULL,
+  `age` varchar(255) NOT NULL,
   `nation` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
@@ -82,7 +90,39 @@ CREATE TABLE IF NOT EXISTS `customer_registration` (
 --
 
 INSERT INTO `customer_registration` (`user_id`, `user_name`, `last_name`, `gender`, `age`, `nation`, `address`, `email`, `password`, `recive_date`) VALUES
-(10, 'Thisun', 'Pieushan', '1', 24, '2', 'Panadura', 'Thisum44@gmail.com', '44', '2019-08-09');
+(1, 'Thisun', 'Pieushan', 'male', '24', 'sinhala', 'Panadura', 'Thisum44@gmail.com', '4444', '2018-08-20'),
+(2, 'Dulitha', 'Pieushan', 'male', '24', 'sinhala', 'Moratuwa', 'Thisum44@gmail.com', '7777', '2018-12-20'),
+(3, 'Dulitha', 'Thisun', 'male', '24', 'sinhala', 'Panadura', 'Thisum44@gmail.com', '4444', '2019-04-20'),
+(4, 'Anna', 'Sophia', 'female', '25', 'other', 'America', 'Anna44@gmail.com', '4444', '2019-08-20'),
+(5, 'Thisun', 'Pieushan', '1', '24', '2', 'Panadura', 'Thisum44@gmail.com', '5555', '2019-08-21'),
+(6, 'Thisun', 'Pieushan', '1', '24', '2', 'Panadura', 'Thisum44@gmail.com', '4444', '2019-08-21'),
+(7, 'Dulitha', 'Pieushan', 'male', '24', 'sinhala', 'Moratuwa', 'kalpani@gmail.com', '4444', '2019-08-21'),
+(8, 'Thisun', 'Pieushan', 'male', '24', 'sinhala', 'Panadura', 'Thisum44@gmail.com', '4444', '2019-08-21'),
+(9, 'Thisun', 'Pieushan', 'male', '24', 'sinhala', 'Panadura', 'Thisum44@gmail.com', '4444', '2019-08-21'),
+(10, 'Thisun', 'Pieushan', 'male', '24', 'sinhala', 'Panadura', 'Thisum44@gmail.com', '4444', '2019-08-21');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `login_details`
+--
+
+DROP TABLE IF EXISTS `login_details`;
+CREATE TABLE IF NOT EXISTS `login_details` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_name` varchar(255) NOT NULL,
+  `user_password` varchar(255) NOT NULL,
+  `user_type` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `login_details`
+--
+
+INSERT INTO `login_details` (`id`, `user_name`, `user_password`, `user_type`) VALUES
+(3, 'admin', '4444', 'customer'),
+(1, 'admin', 'admin', 'admin');
 
 -- --------------------------------------------------------
 
@@ -139,6 +179,30 @@ CREATE TABLE IF NOT EXISTS `questions` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `reply_message`
+--
+
+DROP TABLE IF EXISTS `reply_message`;
+CREATE TABLE IF NOT EXISTS `reply_message` (
+  `id` int(255) NOT NULL AUTO_INCREMENT,
+  `cust_name` varchar(255) NOT NULL,
+  `cust_email` varchar(255) NOT NULL,
+  `cust_msg` varchar(255) NOT NULL,
+  `reply_msg` varchar(255) NOT NULL,
+  `send_date` date NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `reply_message`
+--
+
+INSERT INTO `reply_message` (`id`, `cust_name`, `cust_email`, `cust_msg`, `reply_msg`, `send_date`) VALUES
+(1, 'Dulitha', 'Thisum44@gmail.com', 'Hiiiiiiiiiiiiiiiiiiiiiiiiii', 'aaaaaaaaaaaaaaaaaaaaa', '2019-08-21');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `shop_registration`
 --
 
@@ -149,21 +213,25 @@ CREATE TABLE IF NOT EXISTS `shop_registration` (
   `shop_name` varchar(255) NOT NULL,
   `food_type` varchar(255) NOT NULL,
   `upload_picture` varchar(255) NOT NULL,
+  `F_vp` varchar(255) NOT NULL,
   `F_od` varchar(255) NOT NULL,
+  `S_vp` varchar(255) NOT NULL,
   `S_od` varchar(255) NOT NULL,
+  `Drive` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `recive_date` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `shop_registration`
 --
 
-INSERT INTO `shop_registration` (`id`, `user_name`, `shop_name`, `food_type`, `upload_picture`, `F_od`, `S_od`, `email`, `password`, `recive_date`) VALUES
-(1, 'Thisun', 'KFC', '[\"1\",\"2\",\"4\"]', 'Food 1.jpg', '  40%', '   40%', 'Thisum44@gmail.com', '4444', '2019-08-10'),
-(7, 'Thisun', 'KFC', '[\"1\",\"2\",\"4\"]', 'Food 1.jpg', '  40%', '   40%', 'Thisum44@gmail.com', '6666', '2019-08-10');
+INSERT INTO `shop_registration` (`id`, `user_name`, `shop_name`, `food_type`, `upload_picture`, `F_vp`, `F_od`, `S_vp`, `S_od`, `Drive`, `email`, `password`, `recive_date`) VALUES
+(9, 'Thisun', 'Pizza Hut', '[\"1\",\"2\",\"3\",\"4\",\"5\"]', '450-4506999_tea-leaf-logo-clip-art-tea-leaves (1).png', '400', '   20%', '1000', '   50%', 'yes', 'Thisum44@gmail.com', '4444', '2019-08-11'),
+(8, 'Thisun', 'Pizza Hut', '[\"2\",\"3\",\"4\",\"5\"]', '450-4506999_tea-leaf-logo-clip-art-tea-leaves (1).png', '400', '   20%', '1000', '   50%', 'yes', 'Thisum44@gmail.com', '4444', '2019-08-11'),
+(10, 'Pieushan', 'Pizza Hut', '[\"Sri Lankan\",\"Indian\",\"Thai\",\"Chaineese\",\"Mexican\"]', 'Capture 1.PNG', '1000', '   40%', '1500', '   60%', 'yes', 'Thisum44@gmail.com', '4444', '2019-08-11');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

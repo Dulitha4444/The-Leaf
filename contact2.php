@@ -2,9 +2,9 @@
 
 require('mb.php');
 
-if (isset($_POST['yourname']) and isset($_POST['phonenumber'])){
+if (isset($_POST['username']) and isset($_POST['phonenumber'])){
 
-$Yourname = $_POST['yourname'];
+$Username = $_POST['username'];
 $Phonenumber = $_POST['phonenumber'];
 $Email = $_POST['email'];
 $Reply = $_POST['reply'];
@@ -14,7 +14,7 @@ $date = date("Y-m-d H:i:s");
 
 
 $sql = "INSERT INTO contact (username, phone_number, email, reply, recive_date)
-VALUES ('$Yourname', '$Phonenumber', '$Email', '$Reply', '$date')";
+VALUES ('$Username', '$Phonenumber', '$Email', '$Reply', '$date')";
 
 
 

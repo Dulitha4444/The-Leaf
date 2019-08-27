@@ -7,6 +7,61 @@
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<!--login form validation-->
+	<script src="jquery-3.2.1.min.js" type="text/javascript"></script>
+			  <script type="text/javascript">
+	            $(document).ready(function(){
+
+	                $("#but_submit").click(function(){
+	                    var username = $("#user_id").val().trim();
+	                    var password = $("#user_pass").val().trim();
+
+	                   if( username == "" && password == ""){
+
+						   $('#message3').html("Please enter User Name & Password");
+
+						}
+	                    else if( username == "" ){
+
+						   $('#message1').html("User Name is required");
+						   $('#message3').fadeOut();
+						}
+						else if( password == "" ){
+
+						   $('#message2').html("Password is required");
+						   $('#message1').fadeOut();
+						    $('#message3').fadeOut();
+						}
+						else{
+	                        $.ajax({
+	                            url:'login.php',
+	                            type:'post',
+	                            data:{username:username,password:password},
+	                            success:function(response){
+	                                var msg = "";
+	                                if(response == "admin"){
+	                                    window.location = "Admin/adminpanel.php";
+	                                }
+								               	else if(response == "customer"){
+																	window.location = "Customer/Customer_Registration.php";
+																	}
+																	else if(response == "shop"){
+																	 window.location = "Shops/Shop_Registration.php"
+																	 }
+																	else{
+	                                    msg = "Invalid username and password!";
+	                                }
+	                                $("#message").html(msg);
+								                	$('#message1').fadeOut();
+								                	$('#message2').fadeOut();
+	                            }
+	                        });
+	                    }
+	                });
+
+	            });
+	        </script>
+
 </head>
 <body>
 
@@ -50,21 +105,23 @@
                               <div class="col-md-12">
                                  <form class="form" role="form" method="post" action="login.php">
                                     <div class="form-group">
-                                       <label class="sr-only" for="exampleInputEmail2">Email address</label>
-                                       <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+                                       <label class="sr-only" for="exampleInputEmail2">User Name</label>
+                                       <input type="username" class="form-control" name="user_id" id="user_id" placeholder="User Name" required>
+																			 <div id="message1" style="color:#ff0000"></div>
                                     </div>
                                     <div class="form-group">
                                        <label class="sr-only" for="exampleInputPassword2">Password</label>
-                                       <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
-                                    </div>
+                                       <input type="password" class="form-control" name="user_pass" id="user_pass" placeholder="Password" required>
+ 																		 	<div id="message2" style="color:#ff0000"></div>
+																	  </div>
                                     <div class="checkbox">
                                        <label>
                                        <input type="checkbox"> Remember me
                                        </label>
                                     </div>
                                     <div class="form-group">
-                                       <button type="submit" class="btn btn-success btn-block">Sign in</button>
-                                    </div>
+																			<input type="button" name="but_submit" id="but_submit" value="Sign in" class="btn btn-success btn-block"/>
+																		</div>
                                  </form>
                               </div>
                            </div>
@@ -130,9 +187,7 @@
 		<div class="container">
 			<h2>About Us</h2>
 				<div class="about-content">
-				​Welcome to Harvest Moon Grille, where the food is the star of the show!
-				As farmers ourselves, we are committed to sharing the freshest seasonal ingredients from our own place as well as that from those of other small-scale sustainable farms nearby. We source nearly all of our ingredients – not just a few – from within 100 miles of our doors. This ensures that the food is at its peak of flavor and nutrition, and nourishes our local economy as well as our patrons. Our food is hand crafted, never from a can or a box. We make our bread, stock, sauces, dressings and desserts all in-house. We are passionate about quality, freshness and great service.
-                Come enjoy breakfast and lunch in our comfortable, classy dining room or patio, where you will be surrounded by works from local artists and craftspeople. No time to dine-in? We also offer carry-out and catering.
+				<p>Welcome to The Leaf. We have created this social marketing system as a gaming concept. We register customers and food shops for this system.levels have been created for customers.in the first level we provide five food shops. By buying foods from the shops for more than the amount we give, customers are receiving a code by the shop. The first level is being completed after entering the codes of all five shops into the system. Then the customers are receiving discounts and offers from one of five shops. We do not do any online payment. </p>
 				</div>
 		</div>
 	</section>
