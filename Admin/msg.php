@@ -61,10 +61,10 @@
 		$rmessage  = $conn->real_escape_string($_POST['rmessage']);
 
 		$dataTime = date("Y-m-d H:i:s");
-
+		//var_dump($username);
 		if ($_POST['key'] == 'updateRow') {
 			$conn->query("INSERT INTO reply_message (cust_name, cust_email, cust_msg, reply_msg, send_date)
-							VALUES ('$username', '$email', '$cust_msg', '$rmessage', '$dataTime')");
+							VALUES ('$username', '$email', '$reply', '$rmessage', '$dataTime')");
 			exit('Message send');
 		}
 

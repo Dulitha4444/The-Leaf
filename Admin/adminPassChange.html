@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>Message</title>
+  <title>Password Change</title>
   <!-- Bootstrap core CSS-->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom fonts for this template-->
@@ -23,7 +23,7 @@
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-     <a class="navbar-brand" href="adminpanel.php">The Leaf</a>
+     <a class="navbar-brand" href="adminpanel.php">Sisila Grani Tiles</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -45,40 +45,51 @@
             <li>
               <a href="message.html">Inbox</a>
             </li>
-			<li>
+            <li>
               <a href="reply.html">Reply Messages</a>
             </li>
           </ul>
         </li>
 
-
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Registered Customers">
-              <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseUsers" data-parent="#exampleAccordion">
-                <i class="fa fa-fw fa-users"></i>
-                <span class="nav-link-text">Registered Customers</span>
-              </a>
-    		   <ul class="sidenav-second-level collapse" id="collapseUsers">
-                <li>
-                  <a href="customer.html">All Customers</a>
-                </li>
-
-              </ul>
-
-            </li>
-		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Request for Quotations">
-          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseQuotations" data-parent="#exampleAccordion">
-            <i class="fa fa-fw fa-cart-plus"></i>
-            <span class="nav-link-text">Registered Shps</span>
+				<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Manage Item">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseItems" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-edit"></i>
+            <span class="nav-link-text">Manage Offers & Discounts</span>
           </a>
-          <ul class="sidenav-second-level collapse" id="collapseQuotations">
+          <ul class="sidenav-second-level collapse" id="collapseItems">
+           <li>
+              <a href="item.html">Offers</a>
+            </li>
+			      <li>
+              <a href="item1.html">Discounts</a>
+           </li>
+            </ul>
+          </li>
+
+		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Registered Customers">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseUsers" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-users"></i>
+            <span class="nav-link-text">Registered Customers</span>
+          </a>
+		   <ul class="sidenav-second-level collapse" id="collapseUsers">
             <li>
-              <a href="message.html">All Shops</a>
+              <a href="customer.html">All Customers</a>
             </li>
 
           </ul>
+
         </li>
-
-
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Request for Quotations">
+              <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseQuotations" data-parent="#exampleAccordion">
+                <i class="fa fa-fw fa-cart-plus"></i>
+                <span class="nav-link-text">Registered Shops</span>
+              </a>
+              <ul class="sidenav-second-level collapse" id="collapseQuotations">
+                <li>
+                  <a href="reqBware.html">All Shops</a>
+                </li>
+              </ul>
+            </li>
 
 		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Admin Details">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseAdmin" data-parent="#exampleAccordion">
@@ -118,8 +129,8 @@
         <li class="breadcrumb-item">
           <a href="#">Dashboard</a>
         </li>
-        <li class="breadcrumb-item active">Message</li>
-		 <li class="breadcrumb-item active">Inbox</li>
+        <li class="breadcrumb-item active">Admin</li>
+		 <li class="breadcrumb-item active">Change Password</li>
       </ol>
       <!-- Example DataTables Card-->
 
@@ -129,34 +140,28 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h2 class="modal-title">Inbox</h2>
+                        <h2 class="modal-title">Change Password</h2>
                     </div>
                     <div id="messages"></div>
                     <div class="modal-body">
 
-				    <form name="f2" onsubmit="#" >
+				    <form name="f2" onsubmit="#">
                         <div id="editContent">
 
-                             <label for="username">User Name</label>
-                            <input type="text" class="form-control" placeholder="username" id="username" disabled>
+                            <label for="user_name">User Name</label>
+                            <input type="text" class="form-control" placeholder="user_name" id="user_name" disabled>
                             <span id="namelocation" style="color:red"></span>
                             <br>
-                            <label for="email">Email</label>
-                            <input type="text" class="form-control" placeholder="email" id="email" disabled>
-                            <span id="emaillocation" style="color:red"></span>
-                            <br>
-							              <label for="phone_no">Phone No</label>
-                            <input type="text" class="form-control" placeholder="phonenumber" id="phonenumber" disabled>
-                            <span id="phonelocation" style="color:red"></span>
-                            <br>
-						              	<label for="message1">Customer Message</label>
-                            <input type="text" class="form-control" placeholder="reply" id="reply" disabled>
+
+							<label for="user_type">User Type</label>
+                            <input type="text" class="form-control" placeholder="user_type" id="user_type" disabled>
                             <span id="msglocation" style="color:red"></span>
                             <br>
 
-										<label for="rmessage">Reply Message</label>
-                            <input type="text" class="form-control" placeholder="rmessage" id="rmessage">
-                            <span id="msglocation" style="color:red"></span>
+							<label for="user_password">Password </label>
+                            <input type="text" class="form-control" placeholder="password" id="user_password">
+                            <span id="phonelocation" style="color:red"></span>
+                            <br>
 
                             <br>
                             <input type="hidden" id="editRowID" value="0">
@@ -169,20 +174,15 @@
 						    <h4>Id</h4>
                             <div id="idView"></div><br>
                             <hr>-->
-						    <h4>Full Name</h4>
-                            <div id="nameView"></div><br>
+						    <h4>User Name</h4>
+                            <div id="unameView"></div><br>
                             <hr>
-                            <h4>Email</h4>
-                            <div id="emailView"></div><br>
+							<h4>User Type</h4>
+                            <div id="utypeView"></div><br>
                             <hr>
-                            <h4>Phone No</h4>
-                            <div id="phoneView" ></div>
+                            <h4>Password</h4>
+                            <div id="passView" ></div>
 						    <hr>
-						    <h4>Message</h4>
-                            <div id="msgView" style="overflow-y: scroll; "></div><br>
-                            <hr>
-						    <h4>Receive Date</h4>
-                            <div id="dateView" ></div>
                         </div>
                     </div>
 
@@ -194,12 +194,13 @@
             </div>
         </div>
 
+
         <div class="row">
             <div class="col-md-12">
 
                 <div class="card mb-3">
 			        	<div class="card-header">
-                  <i class="fa fa-table"></i> Inbox</div>
+                  <i class="fa fa-table"></i> ADMIN </div>
                   <div class="card-body">
                     <div class="table-responsive">
                         <!-- <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -210,22 +211,20 @@
                          <thead>
                           <tr>
 						              <!-- <th>Id</th>-->
-                            <th>Full Name</th>
-                            <th>Email</th>
-                            <th>Phone Number</th>
-							<th>Message</th>
-						    <th>Receive Date</th>
+                            <th>User Name</th>
+                            <th>User Type</th>
+							              <th>Password</th>
+
                             <th>Options</th>
                           </tr>
                          </thead>
                          <tfoot>
                           <tr>
 						              <!-- <th>Id</th>-->
-						    <th>Full Name</th>
-                            <th>Email</th>
-                            <th>Phone Number</th>
-							<th>Message</th>
-						    <th>Receive Date</th>
+                            <th>User Name</th>
+                            <th>User Type</th>
+							              <th>Password</th>
+
                             <th>Options</th>
                           </tr>
                          </tfoot>
@@ -241,16 +240,13 @@
         </div>
     </div>
 
-
-
-
     </div>
     <!-- /.container-fluid-->
     <!-- /.content-wrapper-->
     <footer class="sticky-footer">
       <div class="container">
         <div class="text-center">
-          <small>Copyrights &copy; 2019 All Rights Reserved by CreativeTechnizers Inc</small>
+          <small>Copyrights &copy; 2019 All Rights Reserved by The Leaf Inc</small>
         </div>
       </div>
     </footer>
@@ -271,7 +267,7 @@
           <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="homepage.html">Logout</a>
+            <a class="btn btn-primary" href="index.html">Logout</a>
           </div>
         </div>
       </div>
@@ -297,11 +293,10 @@
                $("#showContent").fadeOut();
                $("#editContent").fadeIn();
                $("#editRowID").val(0);
-			         $("#recive_date").val("");
-               $("#reply").val("");
-               $("#email").val("");
-               $("#phone_number").val("");
-               $("#username").val("");
+
+               $("#user_type").val("");
+               $("#user_password").val("");
+               $("#user_name").val("");
                $("#id").val("");
                $("#closeBtn").fadeOut();
                $("#manageBtn").attr('value', 'Add New').attr('onclick', "manageData('addNew')").fadeIn();
@@ -314,7 +309,7 @@
 
         function viewORedit(rowID, type) {
             $.ajax({
-                url: 'msg.php',
+                url: 'passChange.php',
                 method: 'POST',
                 dataType: 'json',
                 data: {
@@ -326,11 +321,10 @@
                         $("#editContent").fadeOut();
                         $("#dateView").html(response.recive_date);
 
-                        $("#msgView").html(response.reply);
+                        $("#passView").html(response.user_password);
+                        $("#utypeView").html(response.user_type);
+                        $("#unameView").html(response.user_name);
 
-                        $("#emailView").html(response.email);
-                        $("#phoneView").html(response.phone_number);
-                        $("#nameView").html(response.username);
                         $("#idView").html(response.id);
                         $("#manageBtn").fadeOut();
                         $("#closeBtn").fadeIn();
@@ -339,16 +333,15 @@
                         $("#editRowID").val(rowID);
                         $("#showContent").fadeOut();
 
-                        $("#reply").val(response.reply);
-                        $("#email").val(response.email);
-                        $("#phone_number").val(response.phone_number);
-                        $("#username").val(response.username);
+						$("#user_password").val(response.user_password);
+                        $("#user_type").val(response.user_type);
+                        $("#user_name").val(response.user_name);
 
                         $("#closeBtn").fadeOut();
-                        $("#manageBtn").attr('value', 'Reply').attr('onclick', "manageData('updateRow')");
+                        $("#manageBtn").attr('value', 'Save Changes').attr('onclick', "manageData('updateRow')");
                     }
 
-                    $(".modal-title").text("Inbox Details");
+                    $(".modal-title").text("ADMIN Details");
                     $("#tableManager").modal('show');
                 }
             });
@@ -356,7 +349,7 @@
 
         function getExistingData(start, limit) {
             $.ajax({
-                url: 'msg.php',
+                url: 'passChange.php',
                 method: 'POST',
                 dataType: 'text',
                 data: {
@@ -377,24 +370,22 @@
 		function manageData(key) {
 
             var id = $("#id");
-            var username = $("#username");
-            var email = $("#email");
-			var reply = $("#reply");
-			var rmessage = $("#rmessage");
+            var user_name = $("#user_name");
+            var user_type = $("#user_type");
+			var user_password = $("#user_password");
             var editRowID = $("#editRowID");
-
-            if (username !='' && email !='' && reply !='' && rmessage !='') {
+debugger;
+            if (user_password !='') {
                 $.ajax({
-                   url: 'msg.php',
+                   url: 'passChange.php',
                    method: 'POST',
                    dataType: 'text',
                    data: {
                        key: key,
                        id: id.val(),
-                       username: username.val(),
-                       email: email.val(),
-					             reply: reply.val(),
-					             rmessage: rmessage.val(),
+                       user_name: user_name.val(),
+                       user_type: user_type.val(),
+					             user_password: user_password.val(),
                        rowID: editRowID.val()
                    }, success: function (response) {
                        if (response != "success"){
@@ -405,15 +396,15 @@
                             $('#messages').fadeOut();
 
                           }, 2000);
+						  //window.location.reload();
 
                        }else {
 
                            $("#country_"+editRowID.val()).html(id.val());
                            id.val('');
-                           username.val('');
-                           email.val('');
-						   reply.val('');
-						   rmessage.val('');
+                           user_name.val('');
+                           user_type.val('');
+						               user_password.val('');
 
                            $('#messages').html('<div class="alert alert-success">'+response+'</div>').fadeIn();
 

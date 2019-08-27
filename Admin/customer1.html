@@ -51,7 +51,24 @@
           </ul>
         </li>
 
+				<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Manage Item">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseItems" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-edit"></i>
+            <span class="nav-link-text">Manage offers & Discounts</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseItems">
+            <li>
+              <a href="message.html">Offers</a>
+            </li>
 
+          </ul>
+          <ul class="sidenav-second-level collapse" id="collapseItems">
+            <li>
+              <a href="message.html">Discunts</a>
+            </li>
+
+          </ul>
+        </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Registered Customers">
               <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseUsers" data-parent="#exampleAccordion">
                 <i class="fa fa-fw fa-users"></i>
@@ -59,20 +76,20 @@
               </a>
     		   <ul class="sidenav-second-level collapse" id="collapseUsers">
                 <li>
-                  <a href="customer.html">All Customers</a>
+                  <a href="customer1.html">All Customers</a>
                 </li>
 
               </ul>
 
             </li>
-		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Request for Quotations">
+		 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Request for Quotations">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseQuotations" data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-cart-plus"></i>
-            <span class="nav-link-text">Registered Shps</span>
+            <span class="nav-link-text">Registered Shops</span>
           </a>
           <ul class="sidenav-second-level collapse" id="collapseQuotations">
             <li>
-              <a href="message.html">All Shops</a>
+              <a href="">All Shops</a>
             </li>
 
           </ul>
@@ -87,7 +104,7 @@
           </a>
 		   <ul class="sidenav-second-level collapse" id="collapseAdmin">
             <li>
-              <a href="adminPassChange.html">Change Password</a>
+              <a href="adminpasswordChange.html">Change password</a>
             </li>
 
           </ul>
@@ -129,7 +146,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h2 class="modal-title">Inbox</h2>
+                        <h2 class="modal-title">Customer List</h2>
                     </div>
                     <div id="messages"></div>
                     <div class="modal-body">
@@ -137,26 +154,38 @@
 				    <form name="f2" onsubmit="#" >
                         <div id="editContent">
 
-                             <label for="username">User Name</label>
-                            <input type="text" class="form-control" placeholder="username" id="username" disabled>
+                             <label for="user_name">User Name</label>
+                            <input type="text" class="form-control" placeholder="user_name" id="user_name" disabled>
+                            <span id="namelocation" style="color:red"></span>
+                            <br>
+                            <label for="last_name">Last Name</label>
+                            <input type="text" class="form-control" placeholder="last_name" id="last_name" disabled>
+                            <span id="namelocation" style="color:red"></span>
+                            <br>
+                            <label for="gender">Gender</label>
+                            <input type="text" class="form-control" placeholder="gender" id="gender" disabled>
+                            <span id="namelocation" style="color:red"></span>
+                            <br>
+                            <label for="age">Age</label>
+                            <input type="text" class="form-control" placeholder="age" id="age" disabled>
+                            <span id="namelocation" style="color:red"></span>
+                            <br>
+                            <label for="nation">Nation</label>
+                            <input type="text" class="form-control" placeholder="nation" id="nation" disabled>
+                            <span id="namelocation" style="color:red"></span>
+                            <br>
+                            <label for="address">Address</label>
+                            <input type="text" class="form-control" placeholder="address" id="address" disabled>
                             <span id="namelocation" style="color:red"></span>
                             <br>
                             <label for="email">Email</label>
                             <input type="text" class="form-control" placeholder="email" id="email" disabled>
                             <span id="emaillocation" style="color:red"></span>
                             <br>
-							              <label for="phone_no">Phone No</label>
-                            <input type="text" class="form-control" placeholder="phonenumber" id="phonenumber" disabled>
+							              <label for="password">passwordword</label>
+                            <input type="password" class="form-control" placeholder="password" id="password" disabled>
                             <span id="phonelocation" style="color:red"></span>
                             <br>
-						              	<label for="message1">Customer Message</label>
-                            <input type="text" class="form-control" placeholder="reply" id="reply" disabled>
-                            <span id="msglocation" style="color:red"></span>
-                            <br>
-
-										<label for="rmessage">Reply Message</label>
-                            <input type="text" class="form-control" placeholder="rmessage" id="rmessage">
-                            <span id="msglocation" style="color:red"></span>
 
                             <br>
                             <input type="hidden" id="editRowID" value="0">
@@ -169,20 +198,31 @@
 						    <h4>Id</h4>
                             <div id="idView"></div><br>
                             <hr>-->
-						    <h4>Full Name</h4>
-                            <div id="nameView"></div><br>
+						                <h4>Full Name</h4>
+                            <div id="unameView"></div><br>
+                            <hr>
+                            <h4>Last Name</h4>
+                            <div id="lnameView"></div><br>
+                            <hr>
+                            <h4>Gender</h4>
+                            <div id="genderView"></div><br>
+                            <hr>
+                            <h4>Age</h4>
+                            <div id="ageView"></div><br>
+                            <hr>
+                            <h4>Nation</h4>
+                            <div id="nationView"></div><br>
+                            <hr>
+                            <h4>Address</h4>
+                            <div id="addressView"></div><br>
                             <hr>
                             <h4>Email</h4>
                             <div id="emailView"></div><br>
                             <hr>
-                            <h4>Phone No</h4>
-                            <div id="phoneView" ></div>
-						    <hr>
-						    <h4>Message</h4>
-                            <div id="msgView" style="overflow-y: scroll; "></div><br>
-                            <hr>
-						    <h4>Receive Date</h4>
-                            <div id="dateView" ></div>
+                            <h4>password</h4>
+                            <div id="passwordView" ></div>
+						                <hr>
+
                         </div>
                     </div>
 
@@ -207,31 +247,39 @@
                       <!-- <table class="table table-bordered table-bordered" id="dataTable" width="100%" cellspacing="0">
              -->
 					  <table class="table table-hover table-bordered">
-                         <thead>
-                          <tr>
-						              <!-- <th>Id</th>-->
-                            <th>Full Name</th>
-                            <th>Email</th>
-                            <th>Phone Number</th>
-							<th>Message</th>
-						    <th>Receive Date</th>
-                            <th>Options</th>
-                          </tr>
-                         </thead>
-                         <tfoot>
-                          <tr>
-						              <!-- <th>Id</th>-->
-						    <th>Full Name</th>
-                            <th>Email</th>
-                            <th>Phone Number</th>
-							<th>Message</th>
-						    <th>Receive Date</th>
-                            <th>Options</th>
-                          </tr>
-                         </tfoot>
-                         <tbody>
+              <thead>
+               <tr>
+               <!-- <th>Id</th>-->
+                 <th>User Name</th>
+                 <th>Last Name</th>
+                 <th>Gender</th>
+                 <th>Age</th>
+                 <th>Nation</th>
+                 <th>Address</th>
+                 <th>Email</th>
+                <th>password</th>
+              <th>Recive Date</th>
+                 <th>Options</th>
+               </tr>
+              </thead>
+              <tfoot>
+               <tr>
+               <!-- <th>Id</th>-->
+                <th>First Name</th>
+                 <th>Last Name</th>
+                 <th>Gender</th>
+                 <th>Age</th>
+                 <th>Nation</th>
+                 <th>Address</th>
+                 <th>Email</th>
+                <th>password</th>
+               <th>Recive Date</th>
+                 <th>Options</th>
+               </tr>
+              </tfoot>
+              <tbody>
 
-                         </tbody>
+              </tbody>
                       </table>
                     </div>
                   </div>
@@ -250,7 +298,7 @@
     <footer class="sticky-footer">
       <div class="container">
         <div class="text-center">
-          <small>Copyrights &copy; 2019 All Rights Reserved by CreativeTechnizers Inc</small>
+          <small>Copyrights &copy; 2019 All Rights Reserved by The Leaf Inc</small>
         </div>
       </div>
     </footer>
@@ -298,11 +346,15 @@
                $("#editContent").fadeIn();
                $("#editRowID").val(0);
 			         $("#recive_date").val("");
-               $("#reply").val("");
+               $("#password").val("");
                $("#email").val("");
-               $("#phone_number").val("");
-               $("#username").val("");
-               $("#id").val("");
+               $("#address").val("");
+               $("#nation").val("");
+               $("#age").val("");
+               $("#gender").val("");
+               $("#last_name").val("");
+               $("#user_name").val("");
+               $("#user_id").val("");
                $("#closeBtn").fadeOut();
                $("#manageBtn").attr('value', 'Add New').attr('onclick', "manageData('addNew')").fadeIn();
             });
@@ -314,7 +366,7 @@
 
         function viewORedit(rowID, type) {
             $.ajax({
-                url: 'msg.php',
+                url: 'customer.php',
                 method: 'POST',
                 dataType: 'json',
                 data: {
@@ -326,23 +378,30 @@
                         $("#editContent").fadeOut();
                         $("#dateView").html(response.recive_date);
 
-                        $("#msgView").html(response.reply);
+                        $("#passwordView").html(response.password);
 
                         $("#emailView").html(response.email);
-                        $("#phoneView").html(response.phone_number);
-                        $("#nameView").html(response.username);
-                        $("#idView").html(response.id);
+                        $("#addressView").html(response.address);
+                        $("#nationView").html(response.nation);
+                        $("#ageView").html(response.age);
+                        $("#genderView").html(response.gender);
+                        $("#lnameView").html(response.last_name);
+                        $("#unameView").html(response.user_name);
+                        $("#idView").html(response.user_id);
                         $("#manageBtn").fadeOut();
                         $("#closeBtn").fadeIn();
                     } else {
                         $("#editContent").fadeIn();
                         $("#editRowID").val(rowID);
                         $("#showContent").fadeOut();
-
-                        $("#reply").val(response.reply);
+					            	$("#password").val(response.password);
                         $("#email").val(response.email);
-                        $("#phone_number").val(response.phone_number);
-                        $("#username").val(response.username);
+                        $("#address").val(response.address);
+                        $("#nation").val(response.nation);
+                        $("#age").val(response.age);
+                        $("#gender").val(response.gender);
+                        $("#last_name").val(response.last_name);
+                        $("#user_name").val(response.user_name);
 
                         $("#closeBtn").fadeOut();
                         $("#manageBtn").attr('value', 'Reply').attr('onclick', "manageData('updateRow')");
@@ -356,7 +415,7 @@
 
         function getExistingData(start, limit) {
             $.ajax({
-                url: 'msg.php',
+                url: 'customer.php',
                 method: 'POST',
                 dataType: 'text',
                 data: {
@@ -376,25 +435,37 @@
 
 		function manageData(key) {
 
-            var id = $("#id");
-            var username = $("#username");
+            var user_id = $("#user_id");
+            var user_name = $("#user_name");
+            var last_name = $("#last_name");
+            var gender = $("#gender");
+            var age = $("#age");
+            var nation = $("#nation");
+            var address = $("#address");
+
             var email = $("#email");
-			var reply = $("#reply");
-			var rmessage = $("#rmessage");
+		      	var password = $("#password");
+
             var editRowID = $("#editRowID");
 
-            if (username !='' && email !='' && reply !='' && rmessage !='') {
+            if (user_name !='' && last_name !='' && gender !='' && age !='' && nation !='' && address !='' && email !='' && password !='') {
                 $.ajax({
-                   url: 'msg.php',
+                   url: 'customer.php',
                    method: 'POST',
                    dataType: 'text',
                    data: {
                        key: key,
-                       id: id.val(),
-                       username: username.val(),
+                       user_id: user_id.val(),
+                       user_name: user_name.val(),
+                       last_name: last_name.val(),
+                       gender: gender.val(),
+                       age: age.val(),
+                       nation: nation.val(),
+                       address: address.val(),
+
                        email: email.val(),
-					             reply: reply.val(),
-					             rmessage: rmessage.val(),
+					             password: password.val(),
+
                        rowID: editRowID.val()
                    }, success: function (response) {
                        if (response != "success"){
@@ -409,11 +480,17 @@
                        }else {
 
                            $("#country_"+editRowID.val()).html(id.val());
-                           id.val('');
-                           username.val('');
+                           user_id.val('');
+                           user_name.val('');
+                           last_name.val('');
+                           gender.val('');
+                           age.val('');
+                           nation.val('');
+                           address.val('');
+
+
                            email.val('');
-						   reply.val('');
-						   rmessage.val('');
+						               password.val('');
 
                            $('#messages').html('<div class="alert alert-success">'+response+'</div>').fadeIn();
 
