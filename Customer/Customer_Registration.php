@@ -39,13 +39,16 @@
 <style>
 /* body {font-family: Arial, Helvetica, sans-serif; background-image: url("images/Food 1.jpg"; "images/Food 2.jpg";"images/Food 3.jpg"); padding-left: 840px; background-size: 1000px 1320px; background-repeat:repeat;} */
 
-.split { height: 100%;  position: fixed; z-index: 1; top: 0; overflow-x: hidden;  }
+.split { height: 100%;  position: fixed; z-index: 1; top: 30; overflow-x: hidden;  }
 
 .left { width: 89%;}
 
-.right { right: 0; padding-left:500px; width: 70%}
+.right { right: 0; padding-left:500px; width: 70%; height: 100%;}
 
 </style>
+
+		<!------- NavigationBar------------>
+
 
 <!-- <div id="slider" style="padding-right: 500px"> -->
 <div class="split left">
@@ -94,7 +97,31 @@
 <!--	<div class="limiter" style="padding-left: 840px;">  -->
 	<div class="split right">
 		<div class="container-login100">
+			<section id="nav-bar" style="background-color: white;">
+				<nav class="navbar navbar-expand-lg navbar-light">
+					<a class="navbar-brand" href="#"> <img src="images/icons/logo.jpg"></a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarNav">
+						<ul class="navbar-nav ml-auto">
+							<li class="nav-item">
+								<a class="nav-link" href="../homepage.html">HOME</a>
+							</li>
+							<!-- <li class="nav-item">
+								<a class="nav-link" href="#services">SERVICES</a>
+							</li> -->
+							<li class="nav-item">
+								<a class="nav-link" href="#contact"></a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#" data-toggle="modal" data-target="#myModal">SIGN IN</a>
+								</section>
 
+							</li>
+
+				  	</ul>
+			   </nav>
 
 			<div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
 				<form class="login100-form validate-form" action="Customer_Registration2.php" method="POST">
@@ -118,10 +145,10 @@
 					<span class="label-input100">Gender:</span> <br>
 					<div class="form-check-inline">
 					<label class="label-input100"><span class="radiotextsty" style="margin-left:30px">Male</span>
-						<input type="radio" id="gender"  name="gender" value="1" checked >
+						<input type="radio" id="gender"  name="gender" value="male" checked >
 						<span class="checkmark" style="margin-left:30px"></span>     
 					<label class="label-input100"><span class="radiotextsty">Female</span></label>
-						<input type="radio" name="gender" value="2">
+						<input type="radio" name="gender" value="female">
 						<span class="checkmark"></span></label>
 
 					</div>
@@ -140,16 +167,16 @@
 						<span class="label-input100">Nation:</span> <br>
 						<div class="form-check-inline" style="margin-top:10px">
 						<label class="label-input100"><span class="radiotextsty">Sinhala</span>
-						  <input type="radio" name="nation" value="2" checked>
+						  <input type="radio" name="nation" value="sinhala" checked>
 						  <span class="checkmark"></span></label> 
 					<label class="label-input100" style="margin-left:10px"><span class="radiotextsty">Tamil</span>
-					  <input type="radio" name="nation" value="2" >
+					  <input type="radio" name="nation" value="tamil" >
 					  <span class="checkmark"></span></label>
 						<label class="label-input100" style="margin-left:10px"><span class="radiotextsty">Muslim</span>
-						  <input type="radio" name="nation" value="2">
+						  <input type="radio" name="nation" value="muslim">
 						  <span class="checkmark"></span></label>
-						<label class="label-input100" style="margin-left:10px"><span class="radiotextsty">Other</span>
-							 <input type="radio" name="nation" value="2">
+						<label class="label-input100"><span class="radiotextsty">Other</span>
+							 <input type="radio" name="nation" value="other">
 							 <span class="checkmark"></span></label>	<br>
 
 
@@ -187,7 +214,7 @@
 							<label class="label-checkbox100" for="ckb1">
 								<span class="txt1">
 									I agree to the
-									<a href="#" class="txt2 hov1">
+									<a href="#" class="txt2 hov1" data-toggle="modal" data-target="#myModal1">
 										Terms of User
 									</a>
 								</span>
@@ -205,7 +232,7 @@
 							</button>
 						</div>
 
-						<a href="#" class="dis-block txt3 hov1 p-r-30 p-t-10 p-b-10 p-l-30">
+						<a href="#" class="dis-block txt3 hov1 p-r-30 p-t-10 p-b-10 p-l-30" data-toggle="modal" data-target="#myModal">
 							Sign in
 							<i class="fa fa-long-arrow-right m-l-5"></i>
 						</a>
@@ -215,6 +242,80 @@
 			</div>
 		</div>
 	</div>
+						<div class="modal fade" id="myModal" role="dialog">
+						<div class="modal-dialog">
+
+						<!-- Modal content-->
+						<div class="modal-content">
+						<div class="modal-header">
+						<h4 class="modal-title">Login</h4>
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+
+						</div>
+						<div class="modal-body">
+							<div class="row">
+															<div class="col-md-12">
+																 <form class="form" role="form" method="post" action="login.php">
+																		<div class="form-group">
+																			 <label class="sr-only" for="exampleInputEmail2">Email address</label>
+																			 <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+																		</div>
+																		<div class="form-group">
+																			 <label class="sr-only" for="exampleInputPassword2">Password</label>
+																			 <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+																		</div>
+																		<div class="checkbox">
+																			 <label>
+																			 <input type="checkbox"> Remember me
+																			 </label>
+																		</div>
+																		<div class="form-group">
+																			 <button type="submit" class="btn btn-success btn-block">Sign in</button>
+																		</div>
+																 </form>
+															</div>
+													 </div>
+						</div>
+						</div>
+
+						</div>
+						</div>
+
+						<div class="modal fade" id="myModal1" role="dialog">
+						<div class="modal-dialog">
+
+						<!-- Modal content-->
+						<div class="modal-content">
+						<div class="modal-header">
+						<h4 class="modal-title">Rules</h4>
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+
+						</div>
+						<div class="modal-body">
+							<div class="row">
+															<div class="col-md-12">
+																 <form class="form" role="form">
+																		<div class="form-group">
+																			<ul style="list-style-type:disc;">
+																			<span style="font-family: 'book antiqua', palatino; font-size: 14pt;">
+																			<li>Now, this system exists only in shops near the Colombo area.</li><br>
+																			<li>In first level, Customers should go to five shops and purchase goods according to the targets given.</li><br>
+																			<li>Customer should enter the correct code to the system which is given by the shop.</li><br>
+																			<li>Only one person can access to one shop.</li><br>
+																	  	</span>
+																			</ul>
+
+																		<!-- <div class="form-group">
+																			 <button type="button" class="btn btn-success btn-block">Ok</button>
+																		</div> -->
+																 </form>
+															</div>
+													 </div>
+						</div>
+						</div>
+
+						</div>
+						</div>
 
 
 	<script LANGUAGE="JavaScript">
