@@ -37,13 +37,16 @@
 	                            url:'login.php',
 	                            type:'post',
 	                            data:{username:username,password:password},
-	                            success:function(response){
+	                            success:function(data){
 	                                var msg = "";
+																	rsp = JSON.parse(data);
+																	response = rsp['role'];
+																	console.log("role",response);
 	                                if(response == "admin"){
 	                                    window.location = "Admin/adminpanel.php";
 	                                }
 								               	else if(response == "customer"){
-																	window.location = "Customer/Customer_Registration.php";
+																	window.location = "Customer/home.php?user_id="+rsp['user_id'];
 																	}
 																	else if(response == "shop"){
 																	 window.location = "Shops/Shop_Registration.php"

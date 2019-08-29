@@ -124,6 +124,17 @@
 			   </nav>
 
 			<div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
+
+				<?php
+
+					 //session_start();
+					 if(isset($_SESSION['success']))
+					 	{
+							echo $_SESSION['success'];
+						}
+						echo "<script>alert('Customer Created Successfully!')</script>"
+					//session_destroy();
+				 ?>
 				<form class="login100-form validate-form" action="Customer_Registration2.php" method="POST">
 					<span class="login100-form-title p-b-59">
 						Sign Up
@@ -155,16 +166,16 @@
 						<span class="label-input100">Nation:</span> <br>
 						<div class="form-check-inline" style="margin-top:10px">
 						<label class="label-input100"><span class="radiotextsty">Sinhala</span>
-						  <input type="radio" name="nation" value="sinhala" checked>
+						  <input type="radio" name="nation" value="1" checked>
 						  <span class="checkmark"></span></label> 
 					<label class="label-input100" style="margin-left:10px"><span class="radiotextsty">Tamil</span>
-					  <input type="radio" name="nation" value="tamil" >
+					  <input type="radio" name="nation" value="2" >
 					  <span class="checkmark"></span></label>
 						<label class="label-input100" style="margin-left:10px"><span class="radiotextsty">Muslim</span>
-						  <input type="radio" name="nation" value="muslim">
+						  <input type="radio" name="nation" value="3">
 						  <span class="checkmark"></span></label>
 						<label class="label-input100"><span class="radiotextsty">Other</span>
-							 <input type="radio" name="nation" value="other">
+							 <input type="radio" name="nation" value="4">
 							 <span class="checkmark"></span></label>	<br>
 
 
@@ -176,47 +187,47 @@
 				<span class="label-input100">Vegeterian or Non-Vegeterian:</span> <br>
 				<div class="form-check-inline">
 				<label class="label-input100"><span class="radiotextsty" style="margin-left:30px">Non-Vegeterian</span>
-					<input type="radio" id="veg"  name="veg" value="Non-Veg" checked >
+					<input type="radio" id="veg"  name="veg" value="2" checked >
 					<span class="checkmark" style="margin-left:30px"></span>     
 				<label class="label-input100"><span class="radiotextsty">Vegeterian</span></label>
-					<input type="radio" name="veg" value="Veg">
+					<input type="radio" name="veg" value="1">
 					<span class="checkmark"></span></label>
         <br> <br>
 				</div>
 
 
-				<label class="label-input100">Most interesting Food Types:</label> <br>
+				<!-- <label class="label-input100">Most interesting Food Types:</label> <br>
              <div class="form-check-inline">
               <label class="label-input100">Sri Lankan
-              <input type="checkbox" name="check[]" id="check" checked value="Srilanka">
+              <input type="checkbox" name="check[]" id="check" checked value="1">
               <span class="checkmark1"></span>
               </label>
               <label class="label-input100">Indian
-              <input type="checkbox"  name="check[]" value="Indian">
+              <input type="checkbox"  name="check[]" value="2">
               <span class="checkmark1"></span>
               </label>
               <label class="label-input100">Thai
-              <input type="checkbox"  name="check[]" value="Thai">
+              <input type="checkbox"  name="check[]" value="3">
               <span class="checkmark1"></span>
               </label>
               <label class="label-input100">Chineese
-              <input type="checkbox"  name="check[]" value="Chineese">
+              <input type="checkbox"  name="check[]" value="4">
               <span class="checkmark1"></span>
               </label>
               <label class="label-input100">Mexican
-              <input type="checkbox"  name="check[]" value="Mexican">
+              <input type="checkbox"  name="check[]" value="5">
               <span class="checkmark1"></span>
               </label>
 							<br> <br>
-             </div>
+             </div> -->
 
 						 <span class="label-input100">Mostly use Payment type:</span> <br>
 		 				<div class="form-check-inline">
 		 				<label class="label-input100"><span class="radiotextsty" style="margin-left:30px">Cash Payements</span>
-		 					<input type="radio" id="ptype"  name="ptype" value="Cash" checked >
+		 					<input type="radio" id="ptype"  name="ptype" value="1" checked >
 		 					<span class="checkmark" style="margin-left:10px"></span>     
 		 				<label class="label-input100"><span class="radiotextsty">Card Payements</span></label>
-		 					<input type="radio" name="ptype" value="Card">
+		 					<input type="radio" name="ptype" value="2">
 		 					<span class="checkmark"></span></label>
 		         <br> <br>
 		 				</div>
@@ -224,16 +235,16 @@
 						<span class="label-input100">Times of taking food mostly</span> <br>
 					 <div class="form-check-inline">
 					 <label class="label-input100"><span class="radiotextsty" >Breakfast</span>
-						 <input type="radio" id="ftimes"  name="ftimes" value="breakfast" checked >
+						 <input type="radio" id="ftimes"  name="ftimes" value="1" checked >
 						   
 					 <label class="label-input100"><span class="radiotextsty" style="margin-left:10px">Lunch</span></label>
-						 <input type="radio" name="ftimes" value="lunch">
+						 <input type="radio" name="ftimes" value="2">
 						 </label>
 						<label class="label-input100"><span class="radiotextsty" style="margin-left:10px">Tea time</span></label>
-					  	<input type="radio" name="ftimes" value="tea time">
+					  	<input type="radio" name="ftimes" value="3">
 				  		 </label>
 					  <label class="label-input100"><span class="radiotextsty" style="margin-left:10px">Dinner</span></label>
-							 <input type="radio" name="ftimes" value="dinner">
+							 <input type="radio" name="ftimes" value="4">
 							</label>
 						<br> <br>
 					 </div>

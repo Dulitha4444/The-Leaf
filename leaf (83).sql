@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Aug 29, 2019 at 08:07 AM
+-- Generation Time: Aug 29, 2019 at 04:02 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.18
 
@@ -78,7 +78,7 @@ CREATE TABLE IF NOT EXISTS `customer_registration` (
   `age` varchar(255) NOT NULL,
   `nation` varchar(255) NOT NULL,
   `veg` varchar(255) NOT NULL,
-  `ftypes` varchar(255) NOT NULL,
+  `ftypes` varchar(255) DEFAULT NULL,
   `ptype` varchar(255) NOT NULL,
   `ftimes` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
@@ -89,14 +89,14 @@ CREATE TABLE IF NOT EXISTS `customer_registration` (
   `code2` varchar(255) DEFAULT NULL,
   `code3` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `customer_registration`
 --
 
 INSERT INTO `customer_registration` (`user_id`, `user_name`, `last_name`, `age`, `nation`, `veg`, `ftypes`, `ptype`, `ftimes`, `address`, `email`, `password`, `recive_date`, `code1`, `code2`, `code3`) VALUES
-(1, 'Dulitha', 'Pieushan', '24', 'sinhala', 'Non-Veg', '[\"Sri lanka\",\"Chineese\",\"Mexican\"]', 'Cash', 'breakfast', 'Panadura', 'Thisum44@gmail.com', '1234', '2019-08-28', NULL, NULL, NULL);
+(29, 'thilina', 'ss', '1', '2', '2', NULL, '2', '1', 'America', 'Thisum44@gmail.com', '011494875', '2019-08-29', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -111,20 +111,14 @@ CREATE TABLE IF NOT EXISTS `login_details` (
   `user_password` varchar(255) NOT NULL,
   `user_type` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `login_details`
 --
 
 INSERT INTO `login_details` (`id`, `user_name`, `user_password`, `user_type`) VALUES
-(14, 'Dulitha', '1234', 'shop'),
-(1, 'admin', 'admin', 'admin'),
-(6, 'Dulitha', '4444', 'customer'),
-(5, 'Sophia', '2222', 'customer'),
-(7, 'Dulitha', '55', 'customer'),
-(16, 'Dulitha', '44', 'shop'),
-(15, 'Dulitha', '44', 'shop');
+(29, 'thilina', '011494875', 'customer');
 
 -- --------------------------------------------------------
 
