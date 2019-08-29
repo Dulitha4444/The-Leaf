@@ -142,18 +142,6 @@
 					</div>
 
 
-					<span class="label-input100">Gender:</span> <br>
-					<div class="form-check-inline">
-					<label class="label-input100"><span class="radiotextsty" style="margin-left:30px">Male</span>
-						<input type="radio" id="gender"  name="gender" value="male" checked >
-						<span class="checkmark" style="margin-left:30px"></span>     
-					<label class="label-input100"><span class="radiotextsty">Female</span></label>
-						<input type="radio" name="gender" value="female">
-						<span class="checkmark"></span></label>
-
-					</div>
-					<br> <br>
-
 
 					<div class="wrap-input100 validate-input" data-validate="Age is required">
 						<span class="label-input100">Age</span>
@@ -183,6 +171,72 @@
 					<br> <br>
 					</div>
         </div>
+
+
+				<span class="label-input100">Vegeterian or Non-Vegeterian:</span> <br>
+				<div class="form-check-inline">
+				<label class="label-input100"><span class="radiotextsty" style="margin-left:30px">Non-Vegeterian</span>
+					<input type="radio" id="veg"  name="veg" value="Non-Veg" checked >
+					<span class="checkmark" style="margin-left:30px"></span>     
+				<label class="label-input100"><span class="radiotextsty">Vegeterian</span></label>
+					<input type="radio" name="veg" value="Veg">
+					<span class="checkmark"></span></label>
+        <br> <br>
+				</div>
+
+
+				<label class="label-input100">Most interesting Food Types:</label> <br>
+             <div class="form-check-inline">
+              <label class="label-input100">Sri Lankan
+              <input type="checkbox" name="check[]" id="check" checked value="Srilanka">
+              <span class="checkmark1"></span>
+              </label>
+              <label class="label-input100">Indian
+              <input type="checkbox"  name="check[]" value="Indian">
+              <span class="checkmark1"></span>
+              </label>
+              <label class="label-input100">Thai
+              <input type="checkbox"  name="check[]" value="Thai">
+              <span class="checkmark1"></span>
+              </label>
+              <label class="label-input100">Chineese
+              <input type="checkbox"  name="check[]" value="Chineese">
+              <span class="checkmark1"></span>
+              </label>
+              <label class="label-input100">Mexican
+              <input type="checkbox"  name="check[]" value="Mexican">
+              <span class="checkmark1"></span>
+              </label>
+							<br> <br>
+             </div>
+
+						 <span class="label-input100">Mostly use Payment type:</span> <br>
+		 				<div class="form-check-inline">
+		 				<label class="label-input100"><span class="radiotextsty" style="margin-left:30px">Cash Payements</span>
+		 					<input type="radio" id="ptype"  name="ptype" value="Cash" checked >
+		 					<span class="checkmark" style="margin-left:10px"></span>     
+		 				<label class="label-input100"><span class="radiotextsty">Card Payements</span></label>
+		 					<input type="radio" name="ptype" value="Card">
+		 					<span class="checkmark"></span></label>
+		         <br> <br>
+		 				</div>
+
+						<span class="label-input100">Times of taking food mostly</span> <br>
+					 <div class="form-check-inline">
+					 <label class="label-input100"><span class="radiotextsty" >Breakfast</span>
+						 <input type="radio" id="ftimes"  name="ftimes" value="breakfast" checked >
+						   
+					 <label class="label-input100"><span class="radiotextsty" style="margin-left:10px">Lunch</span></label>
+						 <input type="radio" name="ftimes" value="lunch">
+						 </label>
+						<label class="label-input100"><span class="radiotextsty" style="margin-left:10px">Tea time</span></label>
+					  	<input type="radio" name="ftimes" value="tea time">
+				  		 </label>
+					  <label class="label-input100"><span class="radiotextsty" style="margin-left:10px">Dinner</span></label>
+							 <input type="radio" name="ftimes" value="dinner">
+							</label>
+						<br> <br>
+					 </div>
 
 				<div class="wrap-input100 validate-input" data-validate = "Address is required....">
 					<span class="label-input100">Address</span>
