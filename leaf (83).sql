@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Aug 29, 2019 at 04:02 PM
--- Server version: 5.7.26
--- PHP Version: 7.2.18
+-- Generation Time: Aug 30, 2019 at 03:15 AM
+-- Server version: 5.7.19
+-- PHP Version: 7.1.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -96,7 +96,7 @@ CREATE TABLE IF NOT EXISTS `customer_registration` (
 --
 
 INSERT INTO `customer_registration` (`user_id`, `user_name`, `last_name`, `age`, `nation`, `veg`, `ftypes`, `ptype`, `ftimes`, `address`, `email`, `password`, `recive_date`, `code1`, `code2`, `code3`) VALUES
-(29, 'thilina', 'ss', '1', '2', '2', NULL, '2', '1', 'America', 'Thisum44@gmail.com', '011494875', '2019-08-29', NULL, NULL, NULL);
+(29, 'thilina', 'ss', '1', '2', '2', NULL, '2', '1', 'America', 'dasa@gmail.com', '011494875', '2019-08-29', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -111,14 +111,21 @@ CREATE TABLE IF NOT EXISTS `login_details` (
   `user_password` varchar(255) NOT NULL,
   `user_type` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=37 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `login_details`
 --
 
 INSERT INTO `login_details` (`id`, `user_name`, `user_password`, `user_type`) VALUES
-(29, 'thilina', '011494875', 'customer');
+(29, 'thilina', '011494875', 'customer'),
+(30, 'test', '123', 'shop'),
+(31, 'test', '123', 'shop'),
+(32, 'test', '123', 'shop'),
+(33, 'test', '123', 'shop'),
+(34, 'qer', '123', 'shop'),
+(35, 'qer', '123', 'shop'),
+(36, 'qer', '123', 'shop');
 
 -- --------------------------------------------------------
 
@@ -207,8 +214,8 @@ CREATE TABLE IF NOT EXISTS `shop_registration` (
   `id` int(255) NOT NULL AUTO_INCREMENT,
   `user_name` varchar(255) NOT NULL,
   `shop_name` varchar(255) NOT NULL,
-  `food_type` varchar(255) NOT NULL,
-  `veg` varchar(255) NOT NULL,
+  `food_type` json DEFAULT NULL,
+  `veg` varchar(255) DEFAULT NULL,
   `upload_picture` varchar(255) NOT NULL,
   `F_vp` varchar(255) NOT NULL,
   `F_od` varchar(255) NOT NULL,
@@ -219,19 +226,24 @@ CREATE TABLE IF NOT EXISTS `shop_registration` (
   `password` varchar(255) NOT NULL,
   `recive_date` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `shop_registration`
 --
 
 INSERT INTO `shop_registration` (`id`, `user_name`, `shop_name`, `food_type`, `veg`, `upload_picture`, `F_vp`, `F_od`, `S_vp`, `S_od`, `Drive`, `email`, `password`, `recive_date`) VALUES
-(9, 'Thisun', 'Pizza Hut', '[\"1\",\"2\",\"3\",\"4\",\"5\"]', '', '450-4506999_tea-leaf-logo-clip-art-tea-leaves (1).png', '400', '   20%', '1000', '   50%', 'yes', 'Thisum44@gmail.com', '4444', '2019-08-11'),
-(8, 'Thisun', 'Pizza Hut', '[\"2\",\"3\",\"4\",\"5\"]', '', '450-4506999_tea-leaf-logo-clip-art-tea-leaves (1).png', '400', '   20%', '1000', '   50%', 'yes', 'Thisum44@gmail.com', '4444', '2019-08-11'),
-(10, 'Pieushan', 'Pizza Hut', '[\"Sri Lankan\",\"Indian\",\"Thai\",\"Chaineese\",\"Mexican\"]', '', 'Capture 1.PNG', '1000', '   40%', '1500', '   60%', 'yes', 'Thisum44@gmail.com', '4444', '2019-08-11'),
-(11, 'Dulitha', 'KFC', '[\"Sri Lankan\",\"Indian\",\"Chaineese\",\"Mexican\"]', 'Non-Vegeterian', 'logo.jpeg', '400', '  40 %', '1000', '   50%', 'yes', 'Thisum44@gmail.com', '1234', '2019-08-29'),
+(9, 'Thisun', 'Pizza Hut', '[1, 2, 3]', '', '450-4506999_tea-leaf-logo-clip-art-tea-leaves (1).png', '400', '   20%', '1000', '   50%', 'yes', 'Thisum44@gmail.com', '4444', '2019-08-11'),
+(8, 'Thisun', 'Pizza Hut', '[\"2\", \"3\", \"4\", \"5\"]', '', '450-4506999_tea-leaf-logo-clip-art-tea-leaves (1).png', '400', '   20%', '1000', '   50%', 'yes', 'Thisum44@gmail.com', '4444', '2019-08-11'),
+(10, 'Pieushan', 'Pizza Hut', '[\"Sri Lankan\", \"Indian\", \"Thai\", \"Chaineese\", \"Mexican\"]', '', 'Capture 1.PNG', '1000', '   40%', '1500', '   60%', 'yes', 'Thisum44@gmail.com', '4444', '2019-08-11'),
+(11, 'Dulitha', 'KFC', '[\"Sri Lankan\", \"Indian\", \"Chaineese\", \"Mexican\"]', 'Non-Vegeterian', 'logo.jpeg', '400', '  40 %', '1000', '   50%', 'yes', 'Thisum44@gmail.com', '1234', '2019-08-29'),
 (12, 'Dulitha', 'KFC', '[\"Sri Lankan\"]', 'Non-Vegeterian', 'main2.jpg', '44', '   4%', '44', '   4%', 'yes', 'Thisum44@gmail.com', '44', '2019-08-29'),
-(13, 'Dulitha', 'KFC', '[\"Sri Lankan\"]', 'Non-Vegeterian', 'main2.jpg', '44', '   4%', '44', '   4%', 'yes', 'Thisum44@gmail.com', '44', '2019-08-29');
+(13, 'Dulitha', 'KFC', '[\"Sri Lankan\"]', 'Non-Vegeterian', 'main2.jpg', '44', '   4%', '44', '   4%', 'yes', 'Thisum44@gmail.com', '44', '2019-08-29'),
+(14, 'test', 'wsr', '[\"Sri Lankan\", \"Indian\"]', NULL, '', '5666', '4500', '5555', '   5', 'yes', 'test@test.com', '123', '2019-08-30'),
+(15, 'test', 'wsr', '[\"Sri Lankan\", \"Indian\"]', NULL, 'Food 1.jpg', '5666', '4500', '5555', '   5', 'yes', 'test@test.com', '123', '2019-08-30'),
+(16, 'test', 'wsr', '[\"Sri Lankan\", \"Indian\"]', NULL, 'Food 1.jpg', '5666', '4500', '5555', '   5', 'yes', 'test@test.com', '123', '2019-08-30'),
+(17, 'qer', 'erw', '[\"1\", \"2\", \"5\"]', NULL, 'Food 1.jpg', '34', '3', '345', '   2344', 'yes', 'test@test.com', '123', '2019-08-30'),
+(18, 'qer', 'erw', '[1, 2, 5]', NULL, 'Food 1.jpg', '34', '3', '345', '   2344', 'yes', 'test@test.com', '123', '2019-08-30');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
