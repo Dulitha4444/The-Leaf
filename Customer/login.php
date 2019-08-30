@@ -12,7 +12,7 @@ if (isset($_POST['username']) && isset($_POST['password']) ) {
 
         $result = mysqli_query($connection,$sql_query);
 
-
+//var_dump($result);
 	    if($result->num_rows > 0) {
          // output data of each row
         while($row = $result->fetch_assoc()) {

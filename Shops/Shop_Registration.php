@@ -188,23 +188,23 @@
 					<span class="label-input100">Food Type:</span> <br><br>
 					<div class="form-check-inline">
 					<label class="label-input100">Sri Lankan
-					    <input type="checkbox" name="check[]" id="check" value="Sri Lankan" checked>
+					    <input type="checkbox" name="check[]" id="check" value="1" checked>
 					  <span class="checkmark1"></span>
 					</label>
 					<label class="label-input100"  style="margin-left:30px">Indian
-					    <input type="checkbox"  name="check[]" value="Indian">
+					    <input type="checkbox"  name="check[]" value="2">
 					  <span class="checkmark1"></span>
 					</label>
 					<label class="label-input100"  style="margin-left:30px">Thai
-					    <input type="checkbox"  name="check[]" value="Thai">
+					    <input type="checkbox"  name="check[]" value="3">
 					  <span class="checkmark1"></span>
 					</label>
 					<label class="label-input100" >Chaineese
-					    <input type="checkbox"  name="check[]" value="Chaineese">
+					    <input type="checkbox"  name="check[]" value="4">
 					  <span class="checkmark1"></span>
 					</label>
 					<label class="label-input100"  style="margin-left:30px">Mexican
-					    <input type="checkbox"  name="check[]" value="Mexican">
+					    <input type="checkbox"  name="check[]" value="5">
 					  <span class="checkmark1"></span>
 					</label>
 					<br><br>

@@ -56,7 +56,9 @@ if (isset($_POST['submit'])) {
  $date = date("Y-m-d H:i:s");
  $user_type = 'shop';
 
-
+ $check = array_map( function($value) { return (int)$value; }, json_decode($check) );
+$check = json_encode($check);
+// return;
 
  $sql = "INSERT INTO shop_registration (user_name, shop_name, food_type, upload_picture, F_vp, F_od, S_vp, S_od, Drive, email, password, recive_date)
  VALUES ('$Username', '$Shopname', '$check', '$fileName', '$Vp1', '$Od1', '$Vp2', '$Od2', '$Drive', '$Email', '$Password', '$date')";

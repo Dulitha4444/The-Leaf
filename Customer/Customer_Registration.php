@@ -130,9 +130,9 @@
 					 //session_start();
 					 if(isset($_SESSION['success']))
 					 	{
-							echo $_SESSION['success'];
+							echo "<script>alert('Customer Created Successfully!')</script>";
 						}
-						echo "<script>alert('Customer Created Successfully!')</script>"
+						
 					//session_destroy();
 				 ?>
 				<form class="login100-form validate-form" action="Customer_Registration2.php" method="POST">

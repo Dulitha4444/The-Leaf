@@ -3,7 +3,7 @@
 
     $servername = "localhost";
     $username = "root";
-    $password = "";
+    $password = "123";
     $dbname = "leaf";
 
     // Create connection
