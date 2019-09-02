@@ -20,12 +20,12 @@
     if ($result->num_rows > 0) {
         // output data of each row
         while($row = $result->fetch_assoc()) {
-            echo "<input type='text' id='txtUserId' value='".$row['user_id']."'>";
-            echo "<input type='text' id='txtAge' value='".$row['age']."'>";
-            echo "<input type='text' id='txtNation' value='".$row['nation']."'>";
-            echo "<input type='text' id='txtVeg' value='".$row['veg']."'>";
-            echo "<input type='text' id='txtPayment' value='".$row['ptype']."'>";
-            echo "<input type='text' id='txtTimes' value='".$row['ftimes']."'>";
+            echo "<input type='text' hidden id='txtUserId' value='".$row['user_id']."'>";
+            echo "<input type='text' hidden id='txtAge' value='".$row['age']."'>";
+            echo "<input type='text' hidden id='txtNation' value='".$row['nation']."'>";
+            echo "<input type='text' hidden id='txtVeg' value='".$row['veg']."'>";
+            echo "<input type='text' hidden id='txtPayment' value='".$row['ptype']."'>";
+            echo "<input type='text' hidden id='txtTimes' value='".$row['ftimes']."'>";
             //echo "<input type='text' value='".$row['user_id']."'>";
         }
     } else {
@@ -39,8 +39,28 @@
       <head>
         <meta charset="utf-8">
         <title></title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
       </head>
       <body>
+
+      <div class="container">
+      <h2 style="padding-top:10px">Suggessted Shops for Round 1</h2>
+        <div class="row" id="DivShopList" style="padding-top:50px">
+
+          <!-- <div class="col-md-3">
+            <div class="card" style="width: 18rem;">
+              <img src="../img/shopimgs/Food.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div> -->
+
+
+        </div>
+      </div>
 
       </body>
 
@@ -70,7 +90,43 @@
 
               for (var k in counts){
                   if (counts.hasOwnProperty(k)) {
-                       alert("Key is " + k + ", value is " + counts[k]);
+                       //alert("Key is " + k + ", value is " + counts[k]);
+
+                       d = {
+                         'type' : k,
+                         'limit': counts[k]
+                       };
+
+                       $.ajax({
+                         url : '../Shops/suggest_shop.php',
+                         method: 'POST',
+                         data: d,
+                         success: function(rsp1) {
+                           rsp1 = JSON.parse(rsp1);
+                           console.log(rsp1);
+                           div = $("#DivShopList");
+
+                          let x;
+                          let content = "";
+                          for(x =0; x<rsp1.length; x++ ){
+
+                            content += '<div class="col-md-4" style="">'+
+                                          '<div class="card" style="width:100%;">'+
+                                            '<img src="../img/shopimgs/'+ rsp1[x]['image'] +'" class="card-img-top" alt="...">'+
+                                            '<div class="card-body">'+
+                                              '<h5 class="card-title">'+ rsp1[x]['name'] +'</h5>'+
+                                              '<p class="card-text"></p>'+
+                                              '<a href="#" class="btn btn-primary">rs '+ rsp1[x]['price'] +'</a><hr>'+
+                                              '<p><input></p><a href="#" class="btn btn-success">Add Coupen</a>'+
+                                           ' </div>'+
+                                          '</div>'+
+                                       ' </div>';
+                          }
+                            div.append(content);
+
+                         }
+                       })
+
                   }
               }
 

@@ -1,8 +1,8 @@
 <?php
 include "mb.php";
 
-$foodType = 1;
-$limit = 2;
+$foodType = $_POST['type'];
+$limit = $_POST['limit'];
 
 $query = "SELECT shop_name,F_vp,upload_picture FROM `shop_registration` WHERE JSON_CONTAINS(food_type, '$foodType') = 1 ORDER BY RAND() LIMIT $limit";
 
