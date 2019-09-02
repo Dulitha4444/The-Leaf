@@ -63,8 +63,7 @@ $check = json_encode($check);
  $sql = "INSERT INTO shop_registration (user_name, shop_name, food_type, upload_picture, F_vp, F_od, S_vp, S_od, Drive, email, password, recive_date)
  VALUES ('$Username', '$Shopname', '$check', '$fileName', '$Vp1', '$Od1', '$Vp2', '$Od2', '$Drive', '$Email', '$Password', '$date')";
 
- $sql1 = "INSERT INTO login_details (user_name, user_password, user_type)
- VALUES ('$Username', '$Password', '$user_type')";
+ $sql1 = "INSERT INTO login_details (user_name, user_password, user_type) VALUES ('$Username', '$Password', '$user_type')";
 
  $connection->query($sql1);
 

@@ -28,7 +28,7 @@ if (isset($_POST['username']) && isset($_POST['password']) ) {
             {
                 $userdata = array(
                   "role"=>"customer",
-                  "user_id"=>$row['id']
+                  "user_id"=>$row['user_id_fk']
                 );
                 echo json_encode($userdata);
             }
