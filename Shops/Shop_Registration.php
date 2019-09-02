@@ -29,7 +29,10 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
 <!--login form validation-->
-<script src="jquery-3.2.1.min.js" type="text/javascript"></script>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
 			<script type="text/javascript">
 						$(document).ready(function(){
 
@@ -58,13 +61,16 @@
 														url:'login.php',
 														type:'post',
 														data:{username:username,password:password},
-														success:function(response){
+														success:function(d){
+															d = JSON.parse(d);
+															response = d['role'];
 																var msg = "";
+																console.log("m",response);
 																if(response == "admin"){
 																		window.location = "../Admin/adminpanel.php";
 																}
 															else if(response == "customer"){
-																window.location = "../Customer/Customer_Registration.php";
+																window.location = "../Customer/home.php?user_id=" + d['user_id'];
 																}
 																else if(response == "shop"){
 																 window.location = "Shops/Shop_Registration.php"

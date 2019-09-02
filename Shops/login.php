@@ -18,15 +18,27 @@ if (isset($_POST['username']) && isset($_POST['password']) ) {
         while($row = $result->fetch_assoc()) {
             if($row["user_type"]== "admin")
             {
-                echo "admin";
+              $userdata = array(
+                "role"=>"admin",
+                "user_id"=>$row['id']
+              );
+              echo json_encode($userdata);
             }
             if($row["user_type"]== "customer")
             {
-                echo "customer";
+                $userdata = array(
+                  "role"=>"customer",
+                  "user_id"=>$row['id']
+                );
+                echo json_encode($userdata);
             }
             if($row["user_type"]== "shop")
             {
-                echo "shop";
+              $userdata = array(
+                "role"=>"admin",
+                "user_id"=>$row['id']
+              );
+              echo json_encode($userdata);
             }
         }
         } else {
