@@ -58,7 +58,7 @@
 
 							<td>
 								<input type="button" onclick="viewORedit('.$data["user_id"].', \'view\')" value="View" class="btn btn-primary">
-								<input type="button" onclick="viewORedit('.$data["user_id"].', \'edit\')" value="Edit" class="btn btn-success">
+								 
 
 							</td>
 
@@ -71,9 +71,9 @@
 				exit('reachedMax');
 		}
 
-		$row_id = $conn->real_escape_string($_POST['rowID']);
+		$row_id = $conn->real_escape_string($_POST['row_id']);
 
-
+		$user_id  = $conn->real_escape_string($_POST['user_id']);
 		$full_name  = $conn->real_escape_string($_POST['user_name']);
 		$last_name = $conn->real_escape_string($_POST['last_name']);
 		$age = $conn->real_escape_string($_POST['age']);
@@ -90,9 +90,10 @@
 		$code2 = $conn->real_escape_string($_POST['code2']);
 		$code3 = $conn->real_escape_string($_POST['code3']);
 
+
 		if ($_POST['key'] == 'updateRow') {
 
-    	$conn->query("UPDATE customer_registration SET code1 ='$code1', code2 ='$code2', code3 ='$code3' WHERE user_id='$row_id'");
+			$conn->query("UPDATE customer_registration SET code1 ='$code1', code2 ='$code2', code3 ='$code3' WHERE user_id='$row_id'");
 			exit('success');
 		}
 

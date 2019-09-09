@@ -38,15 +38,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>Admin Page</title>
+  <title>Shop Page</title>
   <!-- Bootstrap core CSS-->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../Admin/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom fonts for this template-->
-  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="../Admin/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <!-- Page level plugin CSS-->
-  <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+  <link href="../Admin/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
   <!-- Custom styles for this template-->
-  <link href="css1/sb-admin.css" rel="stylesheet">
+  <link href="../Admin/css1/sb-admin.css" rel="stylesheet">
   <!-- Sweat Alert-->
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <!-- nobackpage-->
@@ -91,13 +91,13 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href="adminpanel.php">
+          <a class="nav-link" href="shopmain.php">
             <i class="fa fa-fw fa-dashboard"></i>
             <span class="nav-link-text">Dashboard</span>
           </a>
         </li>
 
-		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Messages">
+		<!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Messages">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-envelope"></i>
             <span class="nav-link-text">Messages</span>
@@ -124,7 +124,7 @@
             </li>
 
           </ul>
-        </li>
+        </li> -->
 
 
 		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Registered Customers">
@@ -153,7 +153,7 @@
 		          </ul>
 		        </li>
 
-		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Admin Details">
+		<!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Admin Details">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseAdmin" data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-cog"></i>
             <span class="nav-link-text">Admin Details</span>
@@ -180,7 +180,7 @@
           <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
             <i class="fa fa-fw fa-sign-out"></i>Logout</a>
         </li>
-      </ul>
+      </ul> -->
     </div>
   </nav>
   <div class="content-wrapper">
@@ -188,14 +188,14 @@
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="#">Dashboard</a>
+          <a href="#">Shop</a>
         </li>
         <li class="breadcrumb-item active">Over View</li>
       </ol>
 
       <!-- Icon Cards-->
       <div class="row">
-        <div class="col-xl-3 col-sm-6 mb-3">
+        <!-- <div class="col-xl-3 col-sm-6 mb-3">
           <div class="card text-white bg-primary o-hidden h-100">
             <div class="card-body">
               <div class="card-body-icon">
@@ -226,7 +226,7 @@
                 </span>
               </a>
             </div>
-        </div>
+        </div> -->
 		<div class="col-xl-3 col-sm-6 mb-3">
             <div class="card text-white bg-success o-hidden h-100">
               <div class="card-body">
@@ -259,7 +259,7 @@
               </a>
             </div>
         </div>
-		<div class="col-xl-3 col-sm-6 mb-3">
+		<!-- <div class="col-xl-3 col-sm-6 mb-3">
             <div class="card text-white bg-danger o-hidden h-100">
               <div class="card-body">
                 <div class="card-body-icon">
@@ -274,7 +274,7 @@
                 </span>
               </a>
             </div>
-        </div>
+        </div> -->
 	  </div>
     </div>
 
@@ -322,19 +322,19 @@
       </div>
     </div>
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../Admin/vendor/jquery/jquery.min.js"></script>
+    <script src="../Admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="../Admin/vendor/jquery-easing/jquery.easing.min.js"></script>
     <!-- Page level plugin JavaScript-->
-    <script src="vendor/chart.js/Chart.min.js"></script>
-    <script src="vendor/datatables/jquery.dataTables.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+    <script src="../Admin/vendor/chart.js/Chart.min.js"></script>
+    <script src="../Admin/vendor/datatables/jquery.dataTables.js"></script>
+    <script src="../Admin/vendor/datatables/dataTables.bootstrap4.js"></script>
     <!-- Custom scripts for all pages-->
-    <script src="js1/sb-admin.min.js"></script>
+    <script src="../Admin/js1/sb-admin.min.js"></script>
     <!-- Custom scripts for this page-->
-    <script src="js1/sb-admin-datatables.min.js"></script>
-    <script src="js1/sb-admin-charts.min.js"></script>
+    <script src="../Admin/js1/sb-admin-datatables.min.js"></script>
+    <script src="../Admin/js1/sb-admin-charts.min.js"></script>
   </div>
 </body>
 

@@ -7,41 +7,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>Customers</title>
+  <title>Shop Page</title>
   <!-- Bootstrap core CSS-->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../Admin/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom fonts for this template-->
-  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="../Admin/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <!-- Page level plugin CSS-->
-  <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+  <link href="../Admin/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
   <!-- Custom styles for this template-->
-  <link href="css1/sb-admin.css" rel="stylesheet">
+  <link href="../Admin/css1/sb-admin.css" rel="stylesheet">
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-     <a class="navbar-brand" href="adminpanel.php">The Leaf</a>
+     <a class="navbar-brand" href="shoppanel.php">The Leaf</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href="adminpanel.php">
+          <a class="nav-link" href="Shopmain.php">
             <i class="fa fa-fw fa-dashboard"></i>
-            <span class="nav-link-text">Dashboard</span>
+            <span class="nav-link-text">Shop</span>
           </a>
         </li>
 
-		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Messages">
+		<!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Messages">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-envelope"></i>
-            <span class="nav-link-text">Messages</span>
+            <span class="nav-link-text">Registered Customers</span>
           </a>
           <ul class="sidenav-second-level collapse" id="collapseComponents">
             <li>
-              <a href="message.html">Inbox</a>
+              <a href="Shop.html">All Customers</a>
             </li>
             <li>
               <a href="reply.html">Reply</a>
@@ -49,9 +49,9 @@
 
 
           </ul>
-        </li>
+        </li> -->
 
-				<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Manage Item">
+				<!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Manage Item">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseItems" data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-edit"></i>
             <span class="nav-link-text">Manage Offers and Discunts</span>
@@ -64,7 +64,7 @@
               <a href="item1.html">Discunts</a>
             </li>
           </ul>
-        </li>
+        </li> -->
 		<!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Request for Quotations">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseQuotations" data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-cart-plus"></i>
@@ -112,7 +112,7 @@
                   </ul>
                 </li>
 
-		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Admin Details">
+		<!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Admin Details">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseAdmin" data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-cog"></i>
             <span class="nav-link-text">Admin Details</span>
@@ -124,7 +124,7 @@
 
           </ul>
 
-        </li>
+        </li> -->
 
 
       </ul>
@@ -169,78 +169,77 @@
 				    <form name="f2" onsubmit="#">
                         <div id="editContent">
 
-                            <label for="user_name">User Name</label>
-                            <input type="text" class="form-control" placeholder="user_name" id="user_name" disabled>
+                          <label for="user_name">User Name</label>
+                          <input type="text" class="form-control" placeholder="user_name" id="user_name" disabled>
 
-                            <br>
+                          <br>
 
-						              	<label for="last_name">Last Name</label>
-                            <input type="text" class="form-control" placeholder="last_name" id="last_name" disabled>
+                          <label for="last_name">Last Name</label>
+                          <input type="text" class="form-control" placeholder="last_name" id="last_name" disabled>
 
-                            <br>
+                          <br>
 
-                            <label for="gender">Gender</label>
-                            <input type="text" class="form-control" placeholder="gender" id="gender" disabled>
+                          <label for="gender">Gender</label>
+                          <input type="text" class="form-control" placeholder="gender" id="gender" disabled>
 
-                            <br>
+                          <br>
 
 
-                            <label for="age">Age</label>
-                            <input type="text" class="form-control" placeholder="age" id="age" disabled>
+                          <label for="age">Age</label>
+                          <input type="text" class="form-control" placeholder="age" id="age" disabled>
 
-                            <br>
+                          <br>
 
-                            <label for="nation">Nation</label>
-                            <input type="text" class="form-control" placeholder="nation" id="nation" disabled>
+                          <label for="nation">Nation</label>
+                          <input type="text" class="form-control" placeholder="nation" id="nation" disabled>
 
-                            <br>
+                          <br>
 
-                            <label for="veg">Vegeterian or Non-Vegeterian</label>
-                            <input type="text" class="form-control" placeholder="veg" id="veg" disabled>
+                          <label for="veg">Vegeterian or Non-Vegeterian</label>
+                          <input type="text" class="form-control" placeholder="veg" id="veg" disabled>
 
-                            <br>
+                          <br>
 
-                            <label for="ptype">Mostly use Payment type</label>
-                            <input type="text" class="form-control" placeholder="ptype" id="ptype" disabled>
+                          <label for="ptype">Mostly use Payment type</label>
+                          <input type="text" class="form-control" placeholder="ptype" id="ptype" disabled>
 
-                            <br>
+                          <br>
 
-                            <label for="ftimes">Times of taking food mostly</label>
-                            <input type="text" class="form-control" placeholder="ftimes" id="ftimes" disabled>
+                          <label for="ftimes">Times of taking food mostly</label>
+                          <input type="text" class="form-control" placeholder="ftimes" id="ftimes" disabled>
 
-                            <br>
+                          <br>
 
-                            <label for="address">Address</label>
-                            <input type="text" class="form-control" placeholder="address" id="address" disabled>
+                          <label for="address">Address</label>
+                          <input type="text" class="form-control" placeholder="address" id="address" disabled>
 
-                            <br>
+                          <br>
 
-                            <label for="email">Email</label>
-                            <input type="text" class="form-control" placeholder="email" id="email" disabled>
+                          <label for="email">Email</label>
+                          <input type="text" class="form-control" placeholder="email" id="email" disabled>
 
-                            <br>
+                          <br>
 
-						              	<label for="password">Password </label>
-                            <input type="text" class="form-control" placeholder="password" id="password" disabled>
+                          <label for="password">Password </label>
+                          <input type="text" class="form-control" placeholder="password" id="password" disabled>
 
-                            <br>
+                          <br>
 
-                            <label for="recive_date">Recive Date</label>
-                            <input type="text" class="form-control" placeholder="recive_date" id="recive_date" disabled>
+                          <label for="recive_date">Recive Date</label>
+                          <input type="text" class="form-control" placeholder="recive_date" id="recive_date" disabled>
 
-                            <br>
+                          <br>
 
-                            <label for="code1">Code 1 </label>
-                            <input type="text" class="form-control" placeholder="Code 1" id="code1">
+                          <label for="code1">Code 1 </label>
+                          <input type="text" class="form-control" placeholder="Code 1" id="code1">
 
-                            <br>
-                            <label for="code2">Code 2 </label>
-                            <input type="text" class="form-control" placeholder="Code 2" id="code2">
+                          <br>
+                          <label for="code2">Code 2 </label>
+                          <input type="text" class="form-control" placeholder="Code 2" id="code2">
 
-                            <br>
-                            <label for="code3">Code 3 </label>
-                            <input type="text" class="form-control" placeholder="Code 3" id="code3">
-
+                          <br>
+                          <label for="code3">Code 3 </label>
+                          <input type="text" class="form-control" placeholder="Code 3" id="code3">
                             <br>
 
                             <br>
@@ -254,7 +253,7 @@
 						    <h4>Id</h4>
                             <div id="idView"></div><br>
                             <hr>-->
-						                <h4>Username Name</h4>
+                            <h4>Username Name</h4>
                             <div id="unameView"></div><br>
                             <hr>
 
@@ -413,23 +412,23 @@
           <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="homepage.html">Logout</a>
+            <a class="btn btn-primary" href="../homepage.html">Logout</a>
           </div>
         </div>
       </div>
     </div>
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../Admin/vendor/jquery/jquery.min.js"></script>
+    <script src="../Admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="../Admin/vendor/jquery-easing/jquery.easing.min.js"></script>
     <!-- Page level plugin JavaScript-->
-    <script src="vendor/datatables/jquery.dataTables.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+    <script src="../Admin/vendor/datatables/jquery.dataTables.js"></script>
+    <script src="../Admin/vendor/datatables/dataTables.bootstrap4.js"></script>
     <!-- Custom scripts for all pages-->
-    <script src="js1/sb-admin.min.js"></script>
+    <script src="../Admin/js1/sb-admin.min.js"></script>
     <!-- Custom scripts for this page-->
-    <script src="js1/sb-admin-datatables.min.js"></script>
+    <script src="../Admin/js1/sb-admin-datatables.min.js"></script>
 
     <script type="text/javascript">
 
@@ -502,9 +501,20 @@
                         $("#editRowID").val(rowID);
                         $("#showContent").fadeOut();
 
-						            $("#code1").val(response.code1);
+                        $("#code1").val(response.code1);
                         $("#code2").val(response.code2);
                         $("#code3").val(response.code3);
+                        $("#recive_date").val(response.recive_date);
+						            $("#password").val(response.password);
+                        $("#email").val(response.email);
+                        $("#address").val(response.address);
+                        $("#ftimes").val(response.ftimes);
+                        $("#ptype").val(response.ptype);
+                        $("#veg").val(response.veg);
+                        $("#nation").val(response.nation);
+                        $("#age").val(response.age);
+                        $("#last_name").val(response.last_name);
+                        $("#user_name").val(response.user_name);
 
                         $("#closeBtn").fadeOut();
                         $("#manageBtn").attr('value', 'Save Changes').attr('onclick', "manageData('updateRow')");
@@ -530,13 +540,12 @@
                         $('tbody').append(response);
                         start += limit;
                         getExistingData(start, limit);
-
                     } else
                         $(".table").DataTable();
                 }
             });
         }
-
+debugger;
 		function manageData(key) {
 
             var user_id = $("#user_id");
@@ -557,7 +566,7 @@
 
             var editRowID = $("#editRowID");
 
-            if (user_name != "") {
+            if (isNotEmpty(code1) && isNotEmpty(code2) && isNotEmpty(code3)) {
                 $.ajax({
                    url: 'customer.php',
                    method: 'POST',
@@ -572,7 +581,6 @@
                        veg : veg.val(),
                        ptype : ptype.val(),
                        ftimes : ftimes.val(),
-                       address : address.val(),
 					             email: email.val(),
 					             password: password.val(),
                        recive_date : recive_date.val(),
@@ -582,7 +590,6 @@
 
                        rowID: editRowID.val()
                    }, success: function (response) {
-                    
                        if (response != "success"){
                            //alert(response);
                          $('#messages').html('<div class="alert alert-success">'+response+'</div>').fadeIn();
@@ -591,8 +598,6 @@
                             $('#messages').fadeOut();
 
                           }, 2000);
-
-
 
                        }else {
 
@@ -624,7 +629,6 @@
 
 
                        }
-                       location.reload();
                    }
                 });
             }

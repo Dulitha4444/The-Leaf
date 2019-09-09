@@ -107,7 +107,7 @@
     <h2>The Leaf</h2>
 
     <a href="#">Customer</a>
-    <a href="#">Shopf</a>
+    <a href="#">Shop</a>
     <a href="Questionnaire.php">Questionnaire</a>
   </body>
 </html>

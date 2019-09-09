@@ -131,13 +131,13 @@
 
 					<div class="wrap-input100 validate-input" data-validate="User Name is required">
 						<span class="label-input100">User Name</span>
-						<input class="input100" id="username" type="text" name="username" placeholder="Username...">
+						<input class="input100" id="username" type="text" required name="username" placeholder="Username...">
 						<span class="focus-input100"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Last Name is required">
 						<span class="label-input100">Last Name</span>
-						<input class="input100" id="lastname" type="text" name="lastname" placeholder="Lastname...">
+						<input class="input100" id="lastname" type="text" required  name="lastname" placeholder="Lastname...">
 						<span class="focus-input100"></span>
 					</div>
 
@@ -145,7 +145,7 @@
 
 					<div class="wrap-input100 validate-input" data-validate="Age is required">
 						<span class="label-input100">Age</span>
-						<input class="input100" id="age" type="text" name="age" placeholder="Age...">
+						<input class="input100" id="age" type="text" required  name="age" placeholder="Age...">
 						<span class="focus-input100"></span>
 					</div>
 
@@ -204,32 +204,32 @@
 						 <input type="radio" id="ftimes"  name="ftimes" value="1" checked >
 						   
 					 <label class="label-input100"><span class="radiotextsty" style="margin-left:10px">Lunch</span></label>
-						 <input type="radio" name="ftimes" value="2">
+						 <input type="radio" id="ftimes"   name="ftimes" value="2">
 						 </label>
 						<label class="label-input100"><span class="radiotextsty" style="margin-left:10px">Tea time</span></label>
-					  	<input type="radio" name="ftimes" value="3">
+					  	<input type="radio" id="ftimes"   name="ftimes" value="3">
 				  		 </label>
 					  <label class="label-input100"><span class="radiotextsty" style="margin-left:10px">Dinner</span></label>
-							 <input type="radio" name="ftimes" value="4">
+							 <input type="radio" id="ftimes"   name="ftimes" value="4">
 							</label>
 						<br> <br>
 					 </div>
 
 				<div class="wrap-input100 validate-input" data-validate = "Address is required....">
 					<span class="label-input100">Address</span>
-					<input class="input100" id="address" type="text" name="address" placeholder="Address...">
+					<input class="input100" id="address" type="text" required  name="address" placeholder="Address...">
 					<span class="focus-input100"></span>
 				</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
 						<span class="label-input100">Email</span>
-						<input class="input100" id="email" type="text" name="email" placeholder="Email address...">
+						<input class="input100" id="email" type="text" required  name="email" placeholder="Email address...">
 						<span class="focus-input100"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Password is required">
 						<span class="label-input100">Password</span>
-						<input class="input100" id="password" type="password" name="password" placeholder="*************">
+						<input class="input100" id="password" required  type="password" name="password" placeholder="*************">
 						<span class="focus-input100"></span>
 					</div>
 
@@ -353,11 +353,16 @@
 	function ValidateForm(form){
 	ErrorText= "";
 	if ( ( form.checkbox.checked == false ) )
-	{
-	alert ( "Please, You should agree the terms." );
-	return false;
-	}
-	if (ErrorText= "") { form.submit() }
+		{
+			alert ( "Please, You should agree the terms." );
+			return false;
+		}
+		else{
+			return true;
+		}
+		if (ErrorText= "") {
+			form.submit()
+		}
 	}
 	</script>
 
@@ -367,25 +372,22 @@
 <script type="text/javascript">
 	$(function(){
 		$('#register').click(function(e){
+			e.preventDefault();
+			//alert("dd"+this.form.checkValidity());
+			//var valid = this.form.checkValidity();
+			// ValidateForm(this.form);
 
-			var valid = this.form.checkValidity();
-
-			if(valid){
-
-			var username = $('#username').val();
-			var lastname = $('#lastname').val();
-			var age 	 = $('#age').val();
-			var nation   = $('#nation').val();
-			var veg   = $('#veg').val();
-			var ptype   = $('#ptype').val();
-			var ftimes   = $('#ftimes').val();
-			var address	 = $('#address').val();
-			var email 	 = $('#email').val();
-			var password = $('#password').val();
-
-
-				e.preventDefault();
-
+			if(this.form.checkValidity() && ValidateForm(this.form)){
+				var username = $('#username').val();
+				var lastname = $('#lastname').val();
+				var age 	 = $('#age').val();
+				var nation   = $('input[name=nation]:checked').val();
+				var veg   = $('input[name=veg]:checked').val();
+				var ptype   = $('input[name=ptype]:checked').val();
+				var ftimes   = $('input[name=ftimes]:checked').val();
+				var address	 = $('#address').val();
+				var email 	 = $('#email').val();
+				var password = $('#password').val();
 				$.ajax({
 					type: 'POST',
 					url: 'Customer_Registration2.php',
@@ -393,9 +395,18 @@
 					success: function(data){
 					Swal.fire({
 								'title': 'Successful',
-								'text': data,
+								'text': 'Created Successfully!',
 								'type': 'success'
 								})
+								.then(function() {
+									console.log(data);
+									if(!isNaN(data)) {
+										window.location = "home.php?user_id="+data;
+									}else{
+										alert("no");
+									}
+
+								});
 
 					},
 					error: function(data){
@@ -403,11 +414,12 @@
 								'title': 'Errors',
 								'text': 'There were errors while saving the data.',
 								'type': 'error'
-								})
+								});
 					}
 				});
 			}else{
-
+				 var emptyTextBoxes = $('input:text,input:password').filter(function() { return this.value == ""; });
+				 $(emptyTextBoxes[0]).focus();
 			}
 		});
 	});

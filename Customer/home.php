@@ -1,13 +1,14 @@
 <?php
+require('mb.php');
     $user_id = $_GET['user_id'];
 
     $servername = "localhost";
     $username = "root";
-    $password = "123";
+    $password = "";
     $dbname = "leaf";
 
     // Create connection
-    $conn = new mysqli($servername, $username, $password,$dbname);
+    $conn = new mysqli($servername, $username, $password, $dbname);
 
     // Check connection
     if ($conn->connect_error) {
@@ -40,6 +41,18 @@
         <meta charset="utf-8">
         <title></title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <style media="screen">
+
+          .fa-check-circle{
+            color:green;
+          }
+
+          .fa-times-circle{
+            color:red;
+          }
+        </style>
       </head>
       <body>
 
@@ -47,26 +60,24 @@
       <h2 style="padding-top:10px">Suggessted Shops for Round 1</h2>
         <div class="row" id="DivShopList" style="padding-top:50px">
 
-          <!-- <div class="col-md-3">
-            <div class="card" style="width: 18rem;">
-              <img src="../img/shopimgs/Food.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-          </div> -->
-
-
         </div>
       </div>
 
       </body>
 
       <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+function suggestShops1() {
+  alert("suggestShops");
+}
+</script>
+
       <script type="text/javascript">
+
+
         $(document).ready(function(){
+          let user_id = <?php echo $_GET['user_id']; ?>;
+
           let data = {
             '1' : $("#txtAge").val(),
             '2': $("#txtNation").val(),
@@ -75,6 +86,7 @@
             '5': $("#txtPayment").val()
           };
 
+        function suggestShops(){
           $.ajax({
             url : 'http://localhost:5000/recommentdations/3',
             method: 'POST',
@@ -88,14 +100,21 @@
               response.forEach(function(x) { counts[x] = (counts[x] || 0)+1; });
               console.log("re",counts);
 
+              let y = 0;
+              let previous_count = 0;
               for (var k in counts){
                   if (counts.hasOwnProperty(k)) {
                        //alert("Key is " + k + ", value is " + counts[k]);
 
                        d = {
                          'type' : k,
-                         'limit': counts[k]
+                         'limit': counts[k],
+                         'user_id': <?php echo $_GET['user_id']; ?>,
+                         'code_id': (y+1),
+                         'last_count': previous_count
                        };
+
+                       previous_count = counts[k];
 
                        $.ajax({
                          url : '../Shops/suggest_shop.php',
@@ -103,7 +122,7 @@
                          data: d,
                          success: function(rsp1) {
                            rsp1 = JSON.parse(rsp1);
-                           console.log(rsp1);
+                           console.log("r",rsp1);
                            div = $("#DivShopList");
 
                           let x;
@@ -117,7 +136,7 @@
                                               '<h5 class="card-title">'+ rsp1[x]['name'] +'</h5>'+
                                               '<p class="card-text"></p>'+
                                               '<a href="#" class="btn btn-primary">rs '+ rsp1[x]['price'] +'</a><hr>'+
-                                              '<p><input></p><a href="#" class="btn btn-success">Add Coupen</a>'+
+                                              '<p><input id="txt'+ (x+1) +'"><span id=spn'+(x+1)+'></span></p><a href="#" class="btn btn-success" onClick="addCoupen('+(x+1)+')">Add Coupen</a>'+
                                            ' </div>'+
                                           '</div>'+
                                        ' </div>';
@@ -128,13 +147,85 @@
                        })
 
                   }
+
+                  y++;
               }
 
             }
           })
-        })
+        }
+
+        function alerss(){
+          alert("dfdfdfd");
+        }
+
+
+
+        function addCoupen(id){
+          let userid = <?php echo $user_id; ?>;
+
+          $.ajax({
+              url: 'addCoupen.php',
+              method: 'POST',
+              data: {
+                'user_id': userid,
+                'code_id': id,
+                'coupen': $('#txt'+id).val()
+              },
+              success: function(data) {
+                console.log("d",data);
+                if(data == '1')
+                {
+                  $('#spn'+id).html('<i class="fa fa-check-circle"></i>');
+                }else{
+                  $('#spn'+id).html('<i class="fa fa-times-circle"></i>');
+                }
+              }
+          })
+        }
+
+        <?php
+
+          $query = "select shop1 from customer_lvl_1 where user_id='$user_id'";
+          if($result = $connection->query($query)){
+            if($result->num_rows>0){
+              while($row = $result->fetch_assoc()) {
+                if($row['shop1'] == "")
+                {
+                  echo "suggestShops();";
+                }
+                else{
+
+                  $sql = "SELECT shop1,shop2,shop3 FROM `customer_lvl_1`  limit 1";
+                  //echo $sql;
+                  $r = $connection->query($sql);
+
+                    if($r->num_rows>0){
+                      //echo 'alerss()';
+                      $row = $result->fetch_assoc();
+                      echo json_encode($r);
+                        echo 'alerss();';
+                        echo 'alert("'.$row['shop2'].'");';
+                        echo 'alert("'.$row['shop3'].'");';
+
+                    }
+                    else{
+                      echo 'alerss()';
+                    }
+
+                  //echo 'alerss()';
+                }
+              }
+            }
+          }
+
+         ?>
+
+       });
       </script>
+
+
     </html>
-    <!-- SELECT shop_name FROM shop_registration 
+    <!-- SELECT shop_name FROM shop_registration
     where
     ORDER BY RAND() LIMIT 1 -->
