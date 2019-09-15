@@ -4,7 +4,7 @@ require('mb.php');
 
     $servername = "localhost";
     $username = "root";
-    $password = "";
+    $password = "123";
     $dbname = "leaf";
 
     // Create connection
@@ -60,6 +60,107 @@ require('mb.php');
       <h2 style="padding-top:10px">Suggessted Shops for Round 1</h2>
         <div class="row" id="DivShopList" style="padding-top:50px">
 
+
+
+                  <?php
+
+                    $query = "select shop1,shop2,shop3 from customer_lvl_1 where user_id='$user_id'  limit 1";
+                    if($result = $connection->query($query)){
+                      if($result->num_rows>0){
+                        //echo 'alert("ersult")';
+                        while($rowM = $result->fetch_assoc()) {
+                          if($rowM['shop1'] == "")
+                          {
+                            //echo 'alert("1")';
+                            //echo "<script type='text/javascript'>suggestShops();</script>";
+                          }
+                          else{
+
+                            $q1 = "SELECT sr.*,cl.code1 FROM `customer_lvl_1` cl, shop_registration sr where cl.user_id = $user_id and cl.shop1 = sr.id LIMIT 1";
+                            if($r1 = $connection->query($q1))
+                            {
+                              if($r1->num_rows)
+                              {
+                                $row = $r1->fetch_assoc();
+
+                                //echo json_encode($row);
+
+                                echo '<div class="col-md-4" style="">'.
+                                '<div class="card" style="width:100%;">'.
+                                  '<img src="../img/shopimgs/'. $row['upload_picture'] .'" class="card-img-top" alt="...">'.
+                                  '<div class="card-body">'.
+                                    '<h5 class="card-title">'. $row['shop_name'] .'</h5>'.
+                                    '<p class="card-text"></p>'.
+                                    '<a href="#" class="btn btn-primary">rs '. $row['F_vp'] .'</a><hr>'.
+                                    '<p><input id="txt'. '1' .'" value="'.$row['code1'].'"><span id=spn'.'1'.'></span></p><a href="#" class="btn btn-success" onClick="addCoupen('.'1'.')">Add Coupen</a>'.
+                                 ' </div>'.
+                                '</div>'.
+                             ' </div>';
+
+                              }
+                            }
+
+                            $q2 = "SELECT sr.*,cl.code2 FROM `customer_lvl_1` cl, shop_registration sr where cl.user_id = $user_id and cl.shop2 = sr.id LIMIT 1";
+                            if($r2 = $connection->query($q2))
+                            {
+                              if($r2->num_rows)
+                              {
+                                $row = $r2->fetch_assoc();
+
+                                //echo json_encode($row);
+
+                                echo '<div class="col-md-4" style="">'.
+                                '<div class="card" style="width:100%;">'.
+                                  '<img src="../img/shopimgs/'. $row['upload_picture'] .'" class="card-img-top" alt="...">'.
+                                  '<div class="card-body">'.
+                                    '<h5 class="card-title">'. $row['shop_name'] .'</h5>'.
+                                    '<p class="card-text"></p>'.
+                                    '<a href="#" class="btn btn-primary">rs '. $row['F_vp'] .'</a><hr>'.
+                                    '<p><input id="txt'. '2' .'" value="'.$row['code2'].'"><span id=spn'.'2'.'></span></p><a href="#" class="btn btn-success" onClick="addCoupen('.'2'.')">Add Coupen</a>'.
+                                 ' </div>'.
+                                '</div>'.
+                             ' </div>';
+
+                              }
+                            }
+
+
+                            $q3 = "SELECT sr.*,cl.code3 FROM `customer_lvl_1` cl, shop_registration sr where cl.user_id = $user_id and cl.shop3 = sr.id LIMIT 1";
+                            if($r3 = $connection->query($q3))
+                            {
+                              if($r3->num_rows)
+                              {
+                                $row = $r3->fetch_assoc();
+
+                                //echo json_encode($row);
+
+                                echo '<div class="col-md-4" style="">'.
+                                '<div class="card" style="width:100%;">'.
+                                  '<img src="../img/shopimgs/'. $row['upload_picture'] .'" class="card-img-top" alt="...">'.
+                                  '<div class="card-body">'.
+                                    '<h5 class="card-title">'. $row['shop_name'] .'</h5>'.
+                                    '<p class="card-text"></p>'.
+                                    '<a href="#" class="btn btn-primary">rs '. $row['F_vp'] .'</a><hr>'.
+                                    '<p><input id="txt'. '3' .'" value="'.$row['code3'].'"><span id=spn'.'3'.'></span></p><a href="#" class="btn btn-success" onClick="addCoupen('.'3'.')">Add Coupen</a>'.
+                                 ' </div>'.
+                                '</div>'.
+                             ' </div>';
+
+                              }
+                            }
+                          }
+                        }
+                      }
+                      else {
+                        //echo "<script type='text/javascript'>suggestShops();</script>";
+                      }
+                    }else{
+                      //echo '<script>alert("4")</script>';
+                    }
+
+                  ?>
+
+
         </div>
       </div>
 
@@ -73,10 +174,7 @@ function suggestShops1() {
 </script>
 
       <script type="text/javascript">
-
-
-        $(document).ready(function(){
-          let user_id = <?php echo $_GET['user_id']; ?>;
+        function suggestShops(){
 
           let data = {
             '1' : $("#txtAge").val(),
@@ -86,7 +184,6 @@ function suggestShops1() {
             '5': $("#txtPayment").val()
           };
 
-        function suggestShops(){
           $.ajax({
             url : 'http://localhost:5000/recommentdations/3',
             method: 'POST',
@@ -155,13 +252,8 @@ function suggestShops1() {
           })
         }
 
-        function alerss(){
-          alert("dfdfdfd");
-        }
-
-
-
         function addCoupen(id){
+          alert('test'+id);
           let userid = <?php echo $user_id; ?>;
 
           $.ajax({
@@ -184,44 +276,49 @@ function suggestShops1() {
           })
         }
 
+        $(document).ready(function(){
+          let user_id = <?php echo $_GET['user_id']; ?>;
+
+          let data = {
+            '1' : $("#txtAge").val(),
+            '2': $("#txtNation").val(),
+            '3': $("#txtVeg").val(),
+            '4': $("#txtTimes").val(),
+            '5': $("#txtPayment").val()
+          };
+
+        function alerss(){
+          alert("dfdfdfd");
+        }
+
+
+        //suggestShops();
+
         <?php
 
-          $query = "select shop1 from customer_lvl_1 where user_id='$user_id'";
-          if($result = $connection->query($query)){
-            if($result->num_rows>0){
-              while($row = $result->fetch_assoc()) {
-                if($row['shop1'] == "")
-                {
-                  echo "suggestShops();";
-                }
-                else{
-
-                  $sql = "SELECT shop1,shop2,shop3 FROM `customer_lvl_1`  limit 1";
-                  //echo $sql;
-                  $r = $connection->query($sql);
-
-                    if($r->num_rows>0){
-                      //echo 'alerss()';
-                      $row = $result->fetch_assoc();
-                      echo json_encode($r);
-                        echo 'alerss();';
-                        echo 'alert("'.$row['shop2'].'");';
-                        echo 'alert("'.$row['shop3'].'");';
-
-                    }
-                    else{
-                      echo 'alerss()';
-                    }
-
-                  //echo 'alerss()';
+            $query = "select shop1,shop2,shop3 from customer_lvl_1 where user_id='$user_id'  limit 1";
+            if($result = $connection->query($query)){
+              if($result->num_rows>0){
+                //echo 'alert("ersult")';
+                while($rowM = $result->fetch_assoc()) {
+                  if($rowM['shop1'] == "")
+                  {
+                    //echo 'alert("1")';
+                    echo "suggestShops();";
+                  }
                 }
               }
+              else {
+                echo "suggestShops();";
+              }
+            }else{
+              echo '<script>alert("4")</script>';
             }
-          }
 
-         ?>
+          ?>
 
        });
+
       </script>
 
 

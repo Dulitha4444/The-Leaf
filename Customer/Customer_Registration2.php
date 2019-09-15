@@ -36,13 +36,16 @@ $age_value;
   VALUES ('$Username', '$Lastname', $age_value, '$Nation', '$Veg', '$Ptype', '$Ftimes', '$Address', '$Email', '$Password', '$date')";
 
 
-  if ( $connection->query($sql) === TRUE) 
+  if ( $connection->query($sql) === TRUE)
   {
   $last_id = $connection->insert_id;
   $sql1 = "INSERT INTO login_details (user_name, user_password, user_type,user_id_fk)
-  VALUES ('$Username', '$Password', '$user_type','$last_id')";
+  VALUES ('$Username', '$Password', '$user_type','$last_id');";
+  $connection->query($sql1);
 
-  if ($connection->query($sql1) === TRUE) {
+  $sql2 = "Insert into customer_lvl_1 (user_id) values('$last_id')";
+
+  if ($connection->query($sql2) === TRUE) {
       header('location:home.php?user_id='.$last_id);
 
   } else {

@@ -33,11 +33,11 @@ require('mb.php');
           {
             echo '1';
           }else{
-            echo 2;
+            echo '2';//invalid code
           }
     }
     else{
-
+      echo '3';
     }
 
   }
