@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 13, 2019 at 10:45 AM
--- Server version: 5.7.26
--- PHP Version: 7.2.18
+-- Generation Time: Sep 17, 2019 at 09:16 PM
+-- Server version: 5.7.19
+-- PHP Version: 7.1.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -78,19 +78,35 @@ CREATE TABLE IF NOT EXISTS `customer_lvl_1` (
   `code2` varchar(20) DEFAULT NULL,
   `code3` varchar(20) DEFAULT NULL,
   `lvl1` int(11) DEFAULT NULL,
-  `shop1` varchar(100) NOT NULL,
-  `shop2` varchar(100) NOT NULL,
-  `shop3` varchar(100) NOT NULL,
+  `shop1` varchar(100) DEFAULT NULL,
+  `shop2` varchar(100) DEFAULT NULL,
+  `shop3` varchar(100) DEFAULT NULL,
+  `shop4` varchar(10) DEFAULT NULL,
+  `code4` varchar(12) DEFAULT NULL,
+  `shop5` varchar(12) DEFAULT NULL,
+  `code5` varchar(12) DEFAULT NULL,
+  `shop6` varchar(12) DEFAULT NULL,
+  `code6` varchar(12) DEFAULT NULL,
+  `shop7` varchar(12) DEFAULT NULL,
+  `code7` varchar(12) DEFAULT NULL,
+  `shop8` varchar(12) DEFAULT NULL,
+  `code8` varchar(12) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `customer_lvl_1`
 --
 
-INSERT INTO `customer_lvl_1` (`id`, `user_id`, `code1`, `code2`, `code3`, `lvl1`, `shop1`, `shop2`, `shop3`) VALUES
-(1, 1, 'complete', NULL, NULL, NULL, '1', '', ''),
-(2, 121, 'complete', 'complete', NULL, NULL, '6', '2', '1');
+INSERT INTO `customer_lvl_1` (`id`, `user_id`, `code1`, `code2`, `code3`, `lvl1`, `shop1`, `shop2`, `shop3`, `shop4`, `code4`, `shop5`, `code5`, `shop6`, `code6`, `shop7`, `code7`, `shop8`, `code8`) VALUES
+(1, 1, 'complete', NULL, NULL, NULL, '1', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(2, 121, 'complete', 'complete', NULL, NULL, '6', '2', '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(3, 129, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(4, 129, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(5, 130, NULL, NULL, NULL, NULL, '9', '11', '12', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(6, 130, NULL, NULL, NULL, NULL, '9', '11', '12', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(7, 131, 'complete', 'asfq', 'sdsd', 1, '9', '11', '14', '9', 'complete', '11', NULL, '12', NULL, '14', NULL, '14', NULL),
+(8, 131, 'complete', NULL, NULL, 1, '9', '11', '14', '9', 'complete', '11', NULL, '12', NULL, '14', NULL, '14', NULL);
 
 -- --------------------------------------------------------
 
@@ -115,46 +131,58 @@ CREATE TABLE IF NOT EXISTS `customer_registration` (
   `code1` varchar(255) DEFAULT NULL,
   `code2` varchar(255) DEFAULT NULL,
   `code3` varchar(255) DEFAULT NULL,
+  `code4` varchar(12) DEFAULT NULL,
+  `code5` varchar(12) DEFAULT NULL,
+  `code6` varchar(12) DEFAULT NULL,
+  `code7` varchar(12) DEFAULT NULL,
+  `code8` varchar(12) DEFAULT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=125 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=132 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `customer_registration`
 --
 
-INSERT INTO `customer_registration` (`user_id`, `user_name`, `last_name`, `age`, `nation`, `veg`, `ptype`, `ftimes`, `address`, `email`, `password`, `recive_date`, `code1`, `code2`, `code3`) VALUES
-(115, 'thilina', 'robb', '3', '1', '1', '1', '1', 'Panadura', 'Thisum44@gmail.com', '316516', '2019-01-05', NULL, NULL, NULL),
-(113, 'thilina', 'robb', '3', '1', '1', '1', '1', 'Panadura', 'Thisum44@gmail.com', '316516', '2019-01-10', NULL, NULL, NULL),
-(112, 'Dulitha', 'Sophia', '2', '1', '1', '1', '1', 'America', 'Thisum44@gmail.com', 'dsf', '2019-01-20', NULL, NULL, NULL),
-(105, 'thilina', 'robb', '2', '1', '1', '1', '1', 'Panadura', 'Thisum44@gmail.com', '1111', '2019-02-05', NULL, NULL, NULL),
-(106, 'thilina', 'Pieushan', '3', '1', '1', '1', '1', 'Panadura', 'Thisum44@gmail.com', '3313', '2019-02-20', NULL, NULL, NULL),
-(107, 'thilina', 'Pieushan', '3', '1', '1', '1', '1', 'Panadura', 'Thisum44@gmail.com', '3313', '2019-02-24', NULL, NULL, NULL),
-(108, 'thilina', 'Pieushan', '2', '1', '1', '1', '1', 'America', 'Thisum44@gmail.com', '2121212', '2019-02-25', NULL, NULL, NULL),
-(109, 'Dulitha', 'Pieushan', '2', '1', '1', '1', '1', 'America', 'Thisum44@gmail.com', 'dfsdfdf', '2019-03-05', NULL, NULL, NULL),
-(110, 'thilina', 'ss', '2', '1', '1', '1', '1', 'Panadura', 'Thisun44@gmail.com', 'sdfsdf', '2019-03-07', NULL, NULL, NULL),
-(104, 'Dulitha', 'Pieushan', '3', '1', '1', '1', '1', 'Panadura', 'Thisum44@gmail.com', '111111111', '2019-03-21', NULL, NULL, NULL),
-(119, 'Dulitha', 'robb', '3', '1', '1', '1', '1', 'Gampaha', 'Thisum44@gmail.com', '311', '2019-04-05', NULL, NULL, NULL),
-(117, 'thilina', 'robb', '3', '1', '1', '1', '1', 'Panadura', 'Thisum44@gmail.com', '316516', '2019-04-07', NULL, NULL, NULL),
-(114, 'thilina', 'robb', '3', '1', '1', '1', '1', 'Panadura', 'Thisum44@gmail.com', '316516', '2019-04-15', NULL, NULL, NULL),
-(118, 'thilina', 'robb', '3', '1', '1', '1', '1', 'Panadura', 'Thisum44@gmail.com', '316516', '2019-04-20', NULL, NULL, NULL),
-(111, 'Dulitha', 'Sophia', '2', '1', '1', '1', '1', 'America', 'Thisum44@gmail.com', 'dfsdfsd', '2019-04-21', NULL, NULL, NULL),
-(116, 'thilina', 'robb', '3', '1', '1', '1', '1', 'Panadura', 'Thisum44@gmail.com', '316516', '2019-05-05', NULL, NULL, NULL),
-(93, 'Thisun', 'Pieushan', '3', '4', '1', '1', '2', 'Panadura', 'Thisum44@gmail.comds', '4444', '2019-05-07', NULL, NULL, NULL),
-(94, 'Anna', 'Sophia', '2', '4', '1', '2', '2', 'Panadura', 'Thisum44@gmail.com', '7777', '2019-05-21', '44', '44', '44'),
-(95, 'Anna', 'Sophia', '2', '4', '1', '2', '2', 'Panadura', 'Thisum44@gmail.com', '111', '2019-06-05', NULL, NULL, NULL),
-(96, 'Anna', 'Sophia', '2', '4', '1', '2', '2', 'Panadura', 'Thisum44@gmail.com', '111', '2019-07-05', NULL, NULL, NULL),
-(97, 'thilina', 'Pieushan', '2', '1', '2', '1', '1', 'America', 'Thisum44@gmail.com', '11111', '2019-07-05', NULL, NULL, NULL),
-(98, 'Dulitha', 'Pieushan', '3', '2', '1', '2', '3', 'Gampaha', 'Thisun44@gmail.com', '11111', '2019-07-05', NULL, NULL, NULL),
-(99, 'thilina', 'robb', '2', '2', '2', '2', '4', 'America', 'Thisun44@gmail.com', '11111', '2019-08-05', NULL, NULL, NULL),
-(100, 'thilina', 'robb', '2', '2', '2', '2', '4', 'America', 'Thisun44@gmail.com', '11111', '2019-09-05', NULL, NULL, NULL),
-(101, 'thilina', 'robb', '2', '3', '2', '1', '1', 'Panadura', 'Thisum44@gmail.com', '1234', '2019-09-05', NULL, NULL, NULL),
-(102, 'thilina', 'robb', '2', '1', '1', '1', '1', 'America', 'Thisum44@gmail.com', '11111', '2019-09-05', NULL, NULL, NULL),
-(103, 'thilina', 'Pieushan', '3', '1', '1', '1', '1', 'Panadura', 'Thisum44@gmail.com', '111111', '2019-09-05', NULL, NULL, NULL),
-(120, 'Dulitha', 'robb', '3', '1', '1', '1', '1', 'Gampaha', 'Thisum44@gmail.com', '311', '2019-09-05', NULL, NULL, NULL),
-(121, 'Dulitha', 'robb', '3', '2', '1', '1', '2', 'Gampaha', 'Thisum44@gmail.com', '311', '2019-09-05', '123', '123', NULL),
-(122, 'Dulitha', 'Pieushan', '2', '1', '2', '1', '4', 'Panadura', 'Thisun44@gmail.com', '1234', '2019-09-10', NULL, NULL, NULL),
-(123, 'Pieushan', 'Thisun', '2', '1', '2', '1', '4', 'Panadura', 'Thisum44@gmail.com', '7777', '2019-09-10', NULL, NULL, NULL),
-(124, 'Thisun', 'Pieushan', '2', '1', '2', '1', '4', 'Panadura', 'Thisum44@gmail.com', '4444', '2019-09-10', NULL, NULL, NULL);
+INSERT INTO `customer_registration` (`user_id`, `user_name`, `last_name`, `age`, `nation`, `veg`, `ptype`, `ftimes`, `address`, `email`, `password`, `recive_date`, `code1`, `code2`, `code3`, `code4`, `code5`, `code6`, `code7`, `code8`) VALUES
+(115, 'thilina', 'robb', '3', '1', '1', '1', '1', 'Panadura', 'Thisum44@gmail.com', '316516', '2019-01-05', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(113, 'thilina', 'robb', '3', '1', '1', '1', '1', 'Panadura', 'Thisum44@gmail.com', '316516', '2019-01-10', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(112, 'Dulitha', 'Sophia', '2', '1', '1', '1', '1', 'America', 'Thisum44@gmail.com', 'dsf', '2019-01-20', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(105, 'thilina', 'robb', '2', '1', '1', '1', '1', 'Panadura', 'Thisum44@gmail.com', '1111', '2019-02-05', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(106, 'thilina', 'Pieushan', '3', '1', '1', '1', '1', 'Panadura', 'Thisum44@gmail.com', '3313', '2019-02-20', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(107, 'thilina', 'Pieushan', '3', '1', '1', '1', '1', 'Panadura', 'Thisum44@gmail.com', '3313', '2019-02-24', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(108, 'thilina', 'Pieushan', '2', '1', '1', '1', '1', 'America', 'Thisum44@gmail.com', '2121212', '2019-02-25', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(109, 'Dulitha', 'Pieushan', '2', '1', '1', '1', '1', 'America', 'Thisum44@gmail.com', 'dfsdfdf', '2019-03-05', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(110, 'thilina', 'ss', '2', '1', '1', '1', '1', 'Panadura', 'Thisun44@gmail.com', 'sdfsdf', '2019-03-07', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(104, 'Dulitha', 'Pieushan', '3', '1', '1', '1', '1', 'Panadura', 'Thisum44@gmail.com', '111111111', '2019-03-21', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(119, 'Dulitha', 'robb', '3', '1', '1', '1', '1', 'Gampaha', 'Thisum44@gmail.com', '311', '2019-04-05', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(117, 'thilina', 'robb', '3', '1', '1', '1', '1', 'Panadura', 'Thisum44@gmail.com', '316516', '2019-04-07', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(114, 'thilina', 'robb', '3', '1', '1', '1', '1', 'Panadura', 'Thisum44@gmail.com', '316516', '2019-04-15', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(118, 'thilina', 'robb', '3', '1', '1', '1', '1', 'Panadura', 'Thisum44@gmail.com', '316516', '2019-04-20', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(111, 'Dulitha', 'Sophia', '2', '1', '1', '1', '1', 'America', 'Thisum44@gmail.com', 'dfsdfsd', '2019-04-21', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(116, 'thilina', 'robb', '3', '1', '1', '1', '1', 'Panadura', 'Thisum44@gmail.com', '316516', '2019-05-05', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(93, 'Thisun', 'Pieushan', '3', '4', '1', '1', '2', 'Panadura', 'Thisum44@gmail.comds', '4444', '2019-05-07', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(94, 'Anna', 'Sophia', '2', '4', '1', '2', '2', 'Panadura', 'Thisum44@gmail.com', '7777', '2019-05-21', '44', '44', '44', NULL, NULL, NULL, NULL, NULL),
+(95, 'Anna', 'Sophia', '2', '4', '1', '2', '2', 'Panadura', 'Thisum44@gmail.com', '111', '2019-06-05', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(96, 'Anna', 'Sophia', '2', '4', '1', '2', '2', 'Panadura', 'Thisum44@gmail.com', '111', '2019-07-05', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(97, 'thilina', 'Pieushan', '2', '1', '2', '1', '1', 'America', 'Thisum44@gmail.com', '11111', '2019-07-05', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(98, 'Dulitha', 'Pieushan', '3', '2', '1', '2', '3', 'Gampaha', 'Thisun44@gmail.com', '11111', '2019-07-05', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(99, 'thilina', 'robb', '2', '2', '2', '2', '4', 'America', 'Thisun44@gmail.com', '11111', '2019-08-05', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(100, 'thilina', 'robb', '2', '2', '2', '2', '4', 'America', 'Thisun44@gmail.com', '11111', '2019-09-05', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(101, 'thilina', 'robb', '2', '3', '2', '1', '1', 'Panadura', 'Thisum44@gmail.com', '1234', '2019-09-05', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(102, 'thilina', 'robb', '2', '1', '1', '1', '1', 'America', 'Thisum44@gmail.com', '11111', '2019-09-05', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(103, 'thilina', 'Pieushan', '3', '1', '1', '1', '1', 'Panadura', 'Thisum44@gmail.com', '111111', '2019-09-05', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(120, 'Dulitha', 'robb', '3', '1', '1', '1', '1', 'Gampaha', 'Thisum44@gmail.com', '311', '2019-09-05', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(121, 'Dulitha', 'robb', '3', '2', '1', '1', '2', 'Gampaha', 'Thisum44@gmail.com', '311', '2019-09-05', '123', '123', NULL, NULL, NULL, NULL, NULL, NULL),
+(122, 'Dulitha', 'Pieushan', '2', '1', '2', '1', '4', 'Panadura', 'Thisun44@gmail.com', '1234', '2019-09-10', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(123, 'Pieushan', 'Thisun', '2', '1', '2', '1', '4', 'Panadura', 'Thisum44@gmail.com', '7777', '2019-09-10', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(124, 'Thisun', 'Pieushan', '2', '1', '2', '1', '4', 'Panadura', 'Thisum44@gmail.com', '4444', '2019-09-10', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(125, 'test', 'sdgs', '4', '1', '2', '1', '1', 'df', 'mahinda@gmail.com', '123', '2019-09-14', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(126, 'test', 'last', '1', '2', '2', '2', '1', 'Kandy Rd', 'd@gmail.com', '123', '2019-09-15', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(127, 'testddd', 'last', '1', '2', '2', '2', '1', 'Kandy Rd', 'd@gmail.com', '123', '2019-09-15', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(128, 'testddd', 'last', '1', '2', '2', '2', '1', 'Kandy Rd', 'd@gmail.com', '123', '2019-09-15', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(129, 'testddd', 'last', '1', '2', '2', '2', '1', 'Kandy Rd', 'd@gmail.com', '123', '2019-09-15', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(130, 'testddd', 'last', '1', '2', '2', '2', '1', 'Kandy Rd', 'd@gmail.com', '123', '2019-09-15', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(131, 'testddd', 'last', '1', '2', '2', '2', '1', 'Kandy Rd', 'd@gmail.com', '123', '2019-09-15', '1234', 'asdf', NULL, 'asdf', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -170,7 +198,7 @@ CREATE TABLE IF NOT EXISTS `login_details` (
   `user_type` varchar(255) NOT NULL,
   `user_id_fk` int(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=152 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=155 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `login_details`
@@ -202,7 +230,10 @@ INSERT INTO `login_details` (`id`, `user_name`, `user_password`, `user_type`, `u
 (109, '', '', 'customer', NULL),
 (110, 'thilina', '', 'customer', NULL),
 (111, 'ee', '4444', 'customer', NULL),
-(151, 'Thisun', '4444', 'customer', 124);
+(151, 'Thisun', '4444', 'customer', 124),
+(152, 'test', '123', 'customer', 125),
+(153, 'test', '123', 'customer', 126),
+(154, 'testddd', '123', 'customer', 127);
 
 -- --------------------------------------------------------
 
