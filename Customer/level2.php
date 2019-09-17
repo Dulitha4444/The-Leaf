@@ -1,8 +1,5 @@
 <?php
-
-session_start();
 require('mb.php');
-
     $user_id = $_GET['user_id'];
 
     $servername = "localhost";
@@ -60,27 +57,28 @@ require('mb.php');
       <body>
 
       <div class="container">
-      
-      <h2 style="padding-top:10px">Suggessted Shops for Round 1</h2>
+      <h2 style="padding-top:10px">Suggessted Shops for Round 2</h2>
         <div class="row" id="DivShopList" style="padding-top:50px">
 
 
 
                   <?php
 
-                    $query = "select shop1,shop2,shop3 from customer_lvl_1 where user_id='$user_id'  limit 1";
+                    $query = "select shop4,shop5,shop6,shop7,shop8 from customer_lvl_1 where user_id='$user_id'  limit 1";
                     if($result = $connection->query($query)){
                       if($result->num_rows>0){
                         //echo 'alert("ersult")';
                         while($rowM = $result->fetch_assoc()) {
-                          if($rowM['shop1'] == "")
+                          if($rowM['shop4'] == "")
                           {
+                            
                             //echo 'alert("1")';
                             //echo "<script type='text/javascript'>suggestShops();</script>";
                           }
                           else{
+                             
 
-                            $q1 = "SELECT sr.*,cl.code1 FROM `customer_lvl_1` cl, shop_registration sr where cl.user_id = $user_id and cl.shop1 = sr.id LIMIT 1";
+                            $q1 = "SELECT sr.*,cl.code4 FROM `customer_lvl_1` cl, shop_registration sr where cl.user_id = $user_id and cl.shop4 = sr.id LIMIT 1";
                             if($r1 = $connection->query($q1))
                             {
                               if($r1->num_rows)
@@ -94,9 +92,9 @@ require('mb.php');
                                   '<img src="../img/shopimgs/'. $row['upload_picture'] .'" class="card-img-top" alt="...">'.
                                   '<div class="card-body">'.
                                     '<h5 class="card-title">'. $row['shop_name'] .'</h5>'.
-                                    '<p class="card-text">'.$row['F_od'].'</p>'.
-                                    '<a href="#" class="btn btn-primary">rs '. $row['F_vp'] .'</a><hr>'.
-                                    '<p><input id="txt'. '1' .'" value="'.$row['code1'].'"><span id=spn'.'1'.'></span></p><a href="#" class="btn btn-success" onClick="addCoupen('.'1'.')">Add Coupen</a>'.
+                                    '<p class="card-text">'.$row['S_od'].'</p>'.
+                                    '<a href="#" class="btn btn-primary">rs '. $row['S_vp'] .'</a><hr>'.
+                                    '<p><input id="txt'. '4' .'" value="'.$row['code4'].'"><span id=spn'.'4'.'></span></p><a href="#" class="btn btn-success" onClick="addCoupen('.'4'.')">Add Coupen</a>'.
                                  ' </div>'.
                                 '</div>'.
                              ' </div>';
@@ -104,7 +102,7 @@ require('mb.php');
                               }
                             }
 
-                            $q2 = "SELECT sr.*,cl.code2 FROM `customer_lvl_1` cl, shop_registration sr where cl.user_id = $user_id and cl.shop2 = sr.id LIMIT 1";
+                            $q2 = "SELECT sr.*,cl.code5 FROM `customer_lvl_1` cl, shop_registration sr where cl.user_id = $user_id and cl.shop5 = sr.id LIMIT 1";
                             if($r2 = $connection->query($q2))
                             {
                               if($r2->num_rows)
@@ -118,9 +116,9 @@ require('mb.php');
                                   '<img src="../img/shopimgs/'. $row['upload_picture'] .'" class="card-img-top" alt="...">'.
                                   '<div class="card-body">'.
                                     '<h5 class="card-title">'. $row['shop_name'] .'</h5>'.
-                                    '<p class="card-text">'.$row['F_od'].'</p>'.
-                                    '<a href="#" class="btn btn-primary">rs '. $row['F_vp'] .'</a><hr>'.
-                                    '<p><input id="txt'. '2' .'" value="'.$row['code2'].'"><span id=spn'.'2'.'></span></p><a href="#" class="btn btn-success" onClick="addCoupen('.'2'.')">Add Coupen</a>'.
+                                    '<p class="card-text">'.$row['S_od'].'</p>'.
+                                    '<a href="#" class="btn btn-primary">rs '. $row['S_vp'] .'</a><hr>'.
+                                    '<p><input id="txt'. '5' .'" value="'.$row['code5'].'"><span id=spn'.'5'.'></span></p><a href="#" class="btn btn-success" onClick="addCoupen('.'5'.')">Add Coupen</a>'.
                                  ' </div>'.
                                 '</div>'.
                              ' </div>';
@@ -129,7 +127,7 @@ require('mb.php');
                             }
 
 
-                            $q3 = "SELECT sr.*,cl.code3 FROM `customer_lvl_1` cl, shop_registration sr where cl.user_id = $user_id and cl.shop3 = sr.id LIMIT 1";
+                            $q3 = "SELECT sr.*,cl.code6 FROM `customer_lvl_1` cl, shop_registration sr where cl.user_id = $user_id and cl.shop6 = sr.id LIMIT 1";
                             if($r3 = $connection->query($q3))
                             {
                               if($r3->num_rows)
@@ -143,9 +141,58 @@ require('mb.php');
                                   '<img src="../img/shopimgs/'. $row['upload_picture'] .'" class="card-img-top" alt="...">'.
                                   '<div class="card-body">'.
                                     '<h5 class="card-title">'. $row['shop_name'] .'</h5>'.
-                                    '<p class="card-text">'.$row['F_od'].'</p>'.
-                                    '<a href="#" class="btn btn-primary">rs '. $row['F_vp'] .'</a><hr>'.
-                                    '<p><input id="txt'. '3' .'" value="'.$row['code3'].'"><span id=spn'.'3'.'></span></p><a href="#" class="btn btn-success" onClick="addCoupen('.'3'.')">Add Coupen</a>'.
+                                    '<p class="card-text">'.$row['S_od'].'</p>'.
+                                    '<a href="#" class="btn btn-primary">rs '. $row['S_vp'] .'</a><hr>'.
+                                    '<p><input id="txt'. '6' .'" value="'.$row['code6'].'"><span id=spn'.'6'.'></span></p><a href="#" class="btn btn-success" onClick="addCoupen('.'6'.')">Add Coupen</a>'.
+                                 ' </div>'.
+                                '</div>'.
+                             ' </div>';
+
+                              }
+                            }
+
+                            $q7 = "SELECT sr.*,cl.code7 FROM `customer_lvl_1` cl, shop_registration sr where cl.user_id = $user_id and cl.shop7 = sr.id LIMIT 1";
+                            if($r7 = $connection->query($q7))
+                            {
+                              if($r7->num_rows)
+                              {
+                                $row = $r7->fetch_assoc();
+
+                                //echo json_encode($row);
+
+                                echo '<div class="col-md-4" style="">'.
+                                '<div class="card" style="width:100%;">'.
+                                  '<img src="../img/shopimgs/'. $row['upload_picture'] .'" class="card-img-top" alt="...">'.
+                                  '<div class="card-body">'.
+                                    '<h5 class="card-title">'. $row['shop_name'] .'</h5>'.
+                                    '<p class="card-text">'.$row['S_od'].'</p>'.
+                                    '<a href="#" class="btn btn-primary">rs '. $row['S_vp'] .'</a><hr>'.
+                                    '<p><input id="txt'. '7' .'" value="'.$row['code7'].'"><span id=spn'.'7'.'></span></p><a href="#" class="btn btn-success" onClick="addCoupen('.'7'.')">Add Coupen</a>'.
+                                 ' </div>'.
+                                '</div>'.
+                             ' </div>';
+
+                              }
+                            }
+
+
+                            $q8 = "SELECT sr.*,cl.code8 FROM `customer_lvl_1` cl, shop_registration sr where cl.user_id = $user_id and cl.shop8 = sr.id LIMIT 1";
+                            if($r8 = $connection->query($q8))
+                            {
+                              if($r8->num_rows)
+                              {
+                                $row = $r8->fetch_assoc();
+
+                                //echo json_encode($row);
+
+                                echo '<div class="col-md-4" style="">'.
+                                '<div class="card" style="width:100%;">'.
+                                  '<img src="../img/shopimgs/'. $row['upload_picture'] .'" class="card-img-top" alt="...">'.
+                                  '<div class="card-body">'.
+                                    '<h5 class="card-title">'. $row['shop_name'] .'</h5>'.
+                                    '<p class="card-text">'.$row['S_od'].'</p>'.
+                                    '<a href="#" class="btn btn-primary">rs '. $row['S_vp'] .'</a><hr>'.
+                                    '<p><input id="txt'. '8' .'" value="'.$row['code8'].'"><span id=spn'.'8'.'></span></p><a href="#" class="btn btn-success" onClick="addCoupen('.'8'.')">Add Coupen</a>'.
                                  ' </div>'.
                                 '</div>'.
                              ' </div>';
@@ -169,17 +216,8 @@ require('mb.php');
 
         <div class="row">
             <div class="jumbotron" style="width:100%;">
-                <p>To complete level 1....</p>
-
-                <?php 
-                    if(isset($_SESSION['error']))
-                    {
-                      echo '<div class="alert alert-danger">'.$_SESSION['error'].'</div>';
-                    }
-                    
-                ?>
-                    
-              <button id="btnLoadLevel2" class="btn btn-success" >Complete</button>
+                <p>To complete level 2....</p>
+                <button id="btnLoadLevel3" class="btn btn-success" >Complete</button>
             </div>
         </div>
       </div>
@@ -188,9 +226,7 @@ require('mb.php');
 
       <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript">
-function suggestShops1() {
-  alert("suggestShops");
-}
+
 </script>
 
       <script type="text/javascript">
@@ -205,7 +241,7 @@ function suggestShops1() {
           };
 
           $.ajax({
-            url : 'http://localhost:5000/recommentdations/3',
+            url : 'http://localhost:5000/recommentdations/5',
             method: 'POST',
             data: data,
             success: function(data){
@@ -227,14 +263,14 @@ function suggestShops1() {
                          'type' : k,
                          'limit': counts[k],
                          'user_id': <?php echo $_GET['user_id']; ?>,
-                         'code_id': (y+1),
+                         'code_id': (y+4),
                          'last_count': previous_count
                        };
 
                        previous_count = counts[k];
 
                        $.ajax({
-                         url : '../Shops/suggest_shop.php',
+                         url : '../Shops/suggest_shop_lv2.php',
                          method: 'POST',
                          data: d,
                          success: function(rsp1) {
@@ -253,7 +289,7 @@ function suggestShops1() {
                                               '<h5 class="card-title">'+ rsp1[x]['name'] +'</h5>'+
                                               '<p class="card-text">'+rsp1[x]['F_od']+'</p>'+
                                               '<a href="#" class="btn btn-primary">rs '+ rsp1[x]['price'] +'</a><hr>'+
-                                              '<p><input id="txt'+ (x+1) +'"><span id=spn'+(x+1)+'></span></p><a href="#" class="btn btn-success" onClick="addCoupen('+(x+1)+')">Add Coupen</a>'+
+                                              '<p><input id="txt'+ (x+4) +'"><span id=spn'+(x+4)+'></span></p><a href="#" class="btn btn-success" onClick="addCoupen('+(x+4)+')">Add Coupen</a>'+
                                            ' </div>'+
                                           '</div>'+
                                        ' </div>';
@@ -307,15 +343,11 @@ function suggestShops1() {
             '5': $("#txtPayment").val()
           };
 
-          $("#btnLoadLevel2").on('click',()=>loadLevel2());
+          $("#btnLoadLevel3").on('click',()=>loadLevel3());
 
-        function alerss(){
-          alert("dfdfdfd");
-        }
-
-        function loadLevel2() {
+        function loadLevel3() {
           let user_id = <?php echo $user_id; ?>;
-          location.href = 'load_level2.php?user_id='+user_id;
+          location.href = 'load_level3.php?user_id='+user_id;
         }
 
 
@@ -323,12 +355,12 @@ function suggestShops1() {
 
         <?php
 
-            $query = "select shop1,shop2,shop3 from customer_lvl_1 where user_id='$user_id'  limit 1";
+            $query = "select shop4,shop5 from customer_lvl_1 where user_id='$user_id'  limit 1";
             if($result = $connection->query($query)){
               if($result->num_rows>0){
                 //echo 'alert("ersult")';
                 while($rowM = $result->fetch_assoc()) {
-                  if($rowM['shop1'] == "")
+                  if($rowM['shop4'] == "")
                   {
                     //echo 'alert("1")';
                     echo "suggestShops();";

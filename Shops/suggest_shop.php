@@ -7,7 +7,7 @@ $user_id = $_POST['user_id'];
 $code_id = $_POST['code_id'];
 $last = $_POST['last_count'];
 
-$query = "SELECT  id,shop_name,F_vp,upload_picture FROM `shop_registration` WHERE JSON_CONTAINS(food_type, '$foodType') = 1 ORDER BY RAND() LIMIT $limit";
+$query = "SELECT  id,shop_name,F_vp,F_od,upload_picture FROM `shop_registration` WHERE JSON_CONTAINS(food_type, '$foodType') = 1 ORDER BY RAND() LIMIT $limit";
 
 $result = mysqli_query($connection,$query);
 
@@ -21,7 +21,8 @@ if($result->num_rows > 0) {
             'id' => $row['id'],
             'name' => $row['shop_name'],
             'price' => $row['F_vp'],
-            'image' => $row['upload_picture']
+            'image' => $row['upload_picture'],
+            'F_od' => $row['F_od']
         );
 
         $i = $row['id'];

@@ -21,8 +21,38 @@ require('mb.php');
       $update_query = "UPDATE `customer_lvl_1` SET `code3` = 'complete' WHERE `customer_lvl_1`.`user_id` = '$user_id';";
       break;
 
+      case '4':
+      $sql = "select * from customer_registration where user_id = '$user_id' and code4 = '$coupen'";
+
+      $update_query = "UPDATE `customer_lvl_1` SET `code4` = 'complete' WHERE `customer_lvl_1`.`user_id` = '$user_id';";
+      break;
+
+      case '5':
+      $sql = "select * from customer_registration where user_id = '$user_id' and code5 = '$coupen'";
+
+      $update_query = "UPDATE `customer_lvl_1` SET `code5` = 'complete' WHERE `customer_lvl_1`.`user_id` = '$user_id';";
+      break;
+
+      case '6':
+      $sql = "select * from customer_registration where user_id = '$user_id' and code6 = '$coupen'";
+
+      $update_query = "UPDATE `customer_lvl_1` SET `code6` = 'complete' WHERE `customer_lvl_1`.`user_id` = '$user_id';";
+      break;
+
+      case '7':
+      $sql = "select * from customer_registration where user_id = '$user_id' and code7 = '$coupen'";
+
+      $update_query = "UPDATE `customer_lvl_1` SET `code7` = 'complete' WHERE `customer_lvl_1`.`user_id` = '$user_id';";
+      break;
+
+      case '8':
+      $sql = "select * from customer_registration where user_id = '$user_id' and code8 = '$coupen'";
+
+      $update_query = "UPDATE `customer_lvl_1` SET `code8` = 'complete' WHERE `customer_lvl_1`.`user_id` = '$user_id';";
+      break;
+
     default:
-      return 'no valid data';
+      echo 'no valid data';
       break;
   }
 
@@ -37,7 +67,7 @@ require('mb.php');
           }
     }
     else{
-      echo '3';
+      echo $sql;
     }
 
   }
